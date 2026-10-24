@@ -1,0 +1,20 @@
+.danger { color: #fff; background: #b83232; }
+.danger:hover { background: #902424; }
+.danger-outline { color: #a12828; border: 1px solid #d8aaaa; background: #fff; }
+.danger-text { padding: 8px; color: #a12828; background: transparent; }
+.heading-actions, .card-actions { display: flex; align-items: center; gap: 8px; }
+.delete-card { max-width: 560px; margin: 70px auto; padding: 42px; border: 1px solid var(--line); border-radius: 18px; background: #fff; text-align: center; box-shadow: 0 15px 45px #30202012; }
+.delete-card h1 { font-family: Georgia, "Noto Serif KR", serif; font-size: 36px; }
+.delete-icon { display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 18px; border-radius: 50%; color: #fff; background: #b83232; font-size: 30px; font-weight: 800; }
+.warning { color: #a12828; }
+.delete-card .form-actions { justify-content: center; margin-top: 28px; }
+@media (max-width: 760px) {
+  .delete-card { margin: 25px auto; padding: 28px 18px; }
+}
+.playback-toolbar { display: flex; align-items: center; gap: 10px; padding: 12px 14px; color: #fff; background: #0f2723; border-bottom: 1px solid #ffffff22; }
+.playback-toolbar button { padding: 8px 13px; color: #fff; background: #ffffff18; }
+.playback-toolbar .play-button { min-width: 110px; color: #102c27; background: #d7f2e7; }
+.playback-toolbar [data-player-status] { margin-left: auto; color: #c9d7d3; font-size: 13px; }
+@media (max-width: 560px) { .playback-toolbar { flex-wrap: wrap; } .playback-toolbar [data-player-status] { width: 100%; margin-left: 0; } }
+.form-error-summary { margin-bottom: 20px; padding: 14px 16px; border: 1px solid #e0aaaa; border-radius: 9px; color: #8d2020; background: #fff1f1; }
+.form-error-summary p { margin: 5px 0 0; }

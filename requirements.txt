@@ -1,0 +1,6 @@
+Django>=5.2,<6.0
+defusedxml>=0.7,<1.0
+
+Authlib>=1.6,<2
+requests>=2.32,<3
+gunicorn>=23,<24

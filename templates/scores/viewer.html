@@ -1,0 +1,5 @@
+{% load static %}<div class="viewer" id="score-viewer" data-measures-per-system="{% if mobile %}2{% else %}4{% endif %}" data-sound-base="{% static 'note_snd/' %}" {% if xml_url %}data-xml-url="{{ xml_url }}"{% endif %} {% if editor_id %}data-editor-id="{{ editor_id }}"{% endif %}>
+<div class="playback-toolbar"><button class="play-button" type="button" data-player-action="play">▶ 재생</button><button type="button" data-player-action="stop">■ 처음으로</button><span data-player-status>재생 준비</span></div>
+<div class="viewer-toolbar"><div class="control-group"><button type="button" data-action="previous" aria-label="이전 페이지">←</button><span><b data-page-current>1</b> / <span data-page-total>1</span></span><button type="button" data-action="next" aria-label="다음 페이지">→</button></div>
+<div class="control-group"><button type="button" data-action="zoom-out" aria-label="축소">−</button><span data-zoom>45%</span><button type="button" data-action="zoom-in" aria-label="확대">＋</button><button type="button" data-action="reset">초기화</button></div></div>
+<p class="viewer-status" data-status>악보 렌더러를 불러오는 중입니다…</p><div class="notation" data-notation></div></div>

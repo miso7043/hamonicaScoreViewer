@@ -1,0 +1,16 @@
+.mobile-layout .site-header{height:56px;padding:0 16px}
+.mobile-layout .page-shell{max-width:760px;padding:20px 12px 48px}
+.mobile-layout .hero{grid-template-columns:1fr;gap:18px;padding:8px 0 26px}
+.mobile-layout .hero h1{font-size:30px}
+.mobile-layout .upload-card{padding:16px}
+.mobile-layout .score-card{grid-template-columns:44px minmax(0,1fr);gap:12px;padding:16px 12px}
+.mobile-layout .score-icon{width:44px;height:44px}
+.mobile-layout h1,.mobile-layout h3{overflow-wrap:anywhere}
+.mobile-layout .detail-heading{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:18px}
+.mobile-layout .detail-heading h1{font-size:28px;line-height:1.3}
+.mobile-layout .viewer-toolbar{position:static;flex-wrap:wrap;justify-content:center;gap:10px;padding:10px 6px}
+.mobile-layout button,.mobile-layout .button{min-height:44px}
+.mobile-layout .playback-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px;background:#fff}
+.mobile-layout [data-player-status]{width:100%;font-size:14px;color:var(--muted)}
+.mobile-layout .notation{padding:4px;min-height:240px}
+.mobile-layout .empty{padding:32px 16px}

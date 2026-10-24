@@ -1,0 +1,16 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const code=fs.readFileSync('static/scores/player.js','utf8');
+const scope={};vm.runInNewContext(code.slice(code.indexOf('  function mergeTiedNotes('),code.indexOf('  function parseMusicXML(')),scope);
+const note=(start,midi=60,flags={})=>({start,duration:1,midi,voice:'1',staff:'1',id:`note-${start}`,...flags});
+let written=[note(0,60,{tieStart:true}),note(1,60,{tieStop:true,tieStart:true}),note(2,60,{tieStop:true})];
+let audio=scope.mergeTiedNotes(written);
+assert.equal(audio.length,1);assert.equal(audio[0].duration,3);
+assert.deepEqual(written.map(n=>n.duration),[1,1,1],'Keep separate glow/click timing');
+assert.equal(scope.mergeTiedNotes([note(0,60,{tieStart:true}),note(1,62,{tieStop:true})]).length,2,'Different pitches sound separately');
+assert.equal(scope.mergeTiedNotes([note(0),note(1)]).length,2,'Untied repeated pitches reattack');
+assert.equal(scope.mergeTiedNotes([note(0,60,{tieStart:true}),note(2,60,{tieStop:true})]).length,2,'Do not tie across rests');
+assert.equal(scope.mergeTiedNotes([note(0,60,{tieStart:true}),note(1,60,{tieStop:true,voice:'2'})]).length,2,'Do not tie across voices');
+assert.equal(scope.mergeTiedNotes([note(0,60,{tieStart:true}),note(1,60,{tieStop:true,staff:'2'})]).length,2,'Do not tie across staves');
+audio=scope.mergeTiedNotes([note(0,60,{tieStart:true}),note(0,64,{tieStart:true}),note(1,60,{tieStop:true}),note(1,64,{tieStop:true})]);
+assert.equal(audio.length,2);assert(audio.every(n=>n.duration===2),'Sustain each chord pitch independently');
+console.log('PASS: sustained tie chains, different pitches, rests, voices, staves, chords, and preserved visual timing');

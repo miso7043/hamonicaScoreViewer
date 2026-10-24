@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% load static %}{% block title %}{{ score.title }} · MusicXML 악보함{% endblock %}
+{% block head %}<script src="https://www.verovio.org/javascript/latest/verovio-toolkit-wasm.js" defer></script><script src="{% static 'scores/viewer.js' %}?v=8" defer></script><script src="{% static 'scores/player.js' %}?v=8" defer></script>{% endblock %}
+{% block content %}<div class="detail-heading"><div><a class="back" href="{% if mobile %}{% url 'scores:mobile-list' %}{% else %}{% url 'scores:list' %}{% endif %}">← 악보 목록</a><h1>{{ score.title }}</h1><p>{{ score.composer|default:"작곡가 미상" }}</p></div>{% if not mobile %}<div class="heading-actions"><a class="button danger-outline" href="{% url 'scores:delete' score.pk %}">삭제</a><a class="button primary" href="{% url 'scores:edit' score.pk %}">타이틀·악보 수정</a></div>{% endif %}</div>
+{% url 'scores:musicxml' score.pk as musicxml_url %}{% include "scores/viewer.html" with xml_url=musicxml_url %}{% endblock %}
