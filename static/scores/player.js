@@ -33,7 +33,7 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
     [98, "24_hole12_draw_D7.m4a"],
   ];
   const semitones = {C:0,D:2,E:4,F:5,G:7,A:9,B:11};
-  let context, events=[], audioEvents=[], duration=0, offset=0, playRequest=0, timer, animationFrame, audioStartedAt=0, playing=false, activeSources=[];
+  let context, events=[], audioEvents=[], duration=0, offset=0, playRequest=0, timer, animationFrame, audioStartedAt=0, playbackFrom=0, playing=false, activeSources=[];
   const buffers = new Map(), downloads = new Map();
   const children = (node,name) => Array.from(node.children).filter(child => child.localName===name);
   const first = (node,name) => Array.from(node.getElementsByTagNameNS("*",name))[0];
@@ -193,9 +193,14 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
   }
   function cancelSources() { activeSources.forEach(source=>{try{source.stop();}catch(_){}}); activeSources=[]; clearInterval(timer); cancelAnimationFrame(animationFrame); highlight([]); }
   function highlight(ids, midis = []) { viewer.dispatchEvent(new CustomEvent("scoreplayhead", {detail:{ids, midis}})); }
-  function playbackOffset() { return Math.min(duration, Math.max(0, context.currentTime-audioStartedAt)); }
+  function playbackOffset() { return Math.min(duration, Math.max(playbackFrom, context.currentTime-audioStartedAt)); }
   function animatePlayhead() {
     if (!playing) return;
+    if (context.currentTime < audioStartedAt + playbackFrom) {
+      highlight([]);
+      animationFrame=requestAnimationFrame(animatePlayhead);
+      return;
+    }
     const position=playbackOffset();
     const currentNotes = events.filter(note=>note.start<=position && position<note.start+note.duration);
     highlight(currentNotes.map(note=>note.id), currentNotes.map(note=>note.midi));
@@ -231,7 +236,7 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
     // Start the score clock only after the first and every following sample is decoded.
     playButton.disabled=false; playing=true; playButton.textContent=t("Ⅱ 일시정지", "\u2161 Pause");
     viewer.dispatchEvent(new CustomEvent("scoreplaybackstart"));
-    const playbackStartOffset=offset, audioStart=context.currentTime+0.5; audioStartedAt=audioStart-playbackStartOffset;
+    const playbackStartOffset=offset, audioStart=context.currentTime+0.5; audioStartedAt=audioStart-playbackStartOffset; playbackFrom=playbackStartOffset;
     // Keep decoded samples in memory, but create audio nodes only for the next second.
     // Scheduling an entire long score at once can overload the audio engine at startup.
     const pendingNotes=audioEvents.filter(note=>note.start+note.duration>offset && note.start<duration)

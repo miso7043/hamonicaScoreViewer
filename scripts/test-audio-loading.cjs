@@ -6,7 +6,7 @@ function setup({failM4a=false, failAll=false, failResume=false, nodeCost=0}={}) 
   let audioContext;
   const button={}, status={};
   const viewer={dataset:{soundBase:'/audio/'},querySelector:s=>s.includes('action')?button:status,
-    addEventListener(){},dispatchEvent:event=>notices.push(event.type)};
+    addEventListener(){},dispatchEvent:event=>notices.push({type:event.type,detail:event.detail})};
   class AudioContext {
     constructor(){this.state='suspended';this.currentTime=10;this.destination={};audioContext=this;}
     async resume(){if(failResume)throw new Error('resume failed');this.state='running';}
@@ -19,9 +19,9 @@ function setup({failM4a=false, failAll=false, failResume=false, nodeCost=0}={}) 
   }
   const scope={window:{AudioContext},document:{documentElement:{lang:'ko'},getElementById:()=>viewer},
     fetch:async name=>{fetched.push(name);return {ok:true,arrayBuffer:async()=>Object.assign(new ArrayBuffer(1),{name, slice(){return this;}})};},
-    CustomEvent:class {constructor(type){this.type=type;}},setInterval(callback){intervals.push(callback);return callback;},clearInterval(callback){const i=intervals.indexOf(callback);if(i>=0)intervals.splice(i,1);},requestAnimationFrame(){},cancelAnimationFrame(){}};
+    CustomEvent:class {constructor(type,options){this.type=type;this.detail=options?.detail;}},setInterval(callback){intervals.push(callback);return callback;},clearInterval(callback){const i=intervals.indexOf(callback);if(i>=0)intervals.splice(i,1);},requestAnimationFrame(){},cancelAnimationFrame(){}};
   vm.runInNewContext(source.replace(/\}\)\(\);\s*$/, `
-    globalThis.test={play,stop,preloadSamples,loadBuffer,samples,setNotes(notes){events=notes;audioEvents=notes;duration=4;},getOffset:()=>offset,setDuration:value=>{duration=value;}};
+    globalThis.test={play,stop,preloadSamples,loadBuffer,samples,setNotes(notes){events=notes;audioEvents=notes;duration=4;},getOffset:()=>offset,getPlaybackOffset:()=>playbackOffset(),animatePlayhead,setDuration:value=>{duration=value;}};
   })();`),scope);
   scope.test.setNotes([{start:0,duration:1,midi:60,id:'first'},{start:1,duration:1,midi:62,id:'next'}]);
   return {api:scope.test,button,status,fetched,decodes,starts,sampleOffsets,notices,advance(seconds){audioContext.currentTime+=seconds;intervals.slice().forEach(tick=>tick());}};
@@ -42,6 +42,12 @@ function setup({failM4a=false, failAll=false, failResume=false, nodeCost=0}={}) 
   assert.equal(h.fetched.length,2,'Clicking a later note must still load every sample in the score');
   h.decodes.shift()();await flush();assert.equal(h.starts.length,0,'Do not start until even earlier score samples finish decoding');
   h.decodes.shift()();await seek;assert.equal(h.starts.length,1,'Start at the clicked note only after the whole score is ready');
+  assert.equal(h.api.getPlaybackOffset(),1,'The 0.5s startup delay must not move the playhead before the clicked note');
+  let head=h.notices.filter(event=>event.type==='scoreplayhead').at(-1);
+  assert.equal(head.detail.midis.length,0,'Do not animate the previous note during startup delay');
+  h.advance(0.5);h.api.animatePlayhead();
+  head=h.notices.filter(event=>event.type==='scoreplayhead').at(-1);
+  assert.deepEqual(Array.from(head.detail.midis),[62],'First animation must match the clicked note when sound starts');
   h=setup({failM4a:true});const fallback=h.api.play();await flush();
   assert(h.fetched.some(name=>name.includes('/fallback/')),'Use PCM WAV when AAC cannot be decoded');
   h.decodes.splice(0).forEach(resolve=>resolve());await fallback;h.advance(1);assert.equal(h.starts.length,2);
