@@ -65,7 +65,7 @@ python manage.py test
 
 ## VPS Deployment Configuration
 
-The repository includes production settings in [`config/production.py`](config/production.py) and deployment templates in [`deploy/`](deploy/). Production authentication uses Authlib's OpenID Connect validation and allows any Google account with a verified email to view and play scores. Only `owner@example.com` can upload, edit, or delete scores. `ALLOWED_GOOGLE_ID` preserves management access for existing owner sessions created before email storage was added. See the [Google OpenID Connect documentation](https://developers.google.com/identity/openid-connect/openid-connect) for protocol details.
+The repository includes production settings in [`config/production.py`](config/production.py) and deployment templates in [`deploy/`](deploy/). Production authentication uses Authlib's OpenID Connect validation and allows any Google account with a verified email to view and play scores. Only the account configured through `SCORE_OWNER_EMAIL` can upload, edit, or delete scores. `ALLOWED_GOOGLE_ID` preserves management access for existing owner sessions created before email storage was added. See the [Google OpenID Connect documentation](https://developers.google.com/identity/openid-connect/openid-connect) for protocol details.
 
 The supplied configuration targets the following layout:
 
@@ -88,8 +88,14 @@ DJANGO_SECRET_KEY
 GOOGLE_CLIENT_ID
 GOOGLE_CLIENT_SECRET
 ALLOWED_GOOGLE_ID
+SCORE_OWNER_EMAIL
+DJANGO_ALLOWED_HOSTS
+GOOGLE_REDIRECT_URI
+DJANGO_CSRF_TRUSTED_ORIGINS
 ```
 
 Include [`deploy/hamonica-nginx.conf`](deploy/hamonica-nginx.conf) in the existing Nginx HTTPS server block. In the `http` block, define a `$hamonica_callback_backend` map that routes requests whose `$arg_state` matches `~^hmp_` to `127.0.0.1:8030`, and all other callback requests to `127.0.0.1:8020`. This lets the app reuse the existing registered Google callback URL.
 
 These files describe the intended deployment configuration; their presence does not indicate that a VPS service is running.
+
+Keep production values in the server environment, outside this repository. Set `SCORE_OWNER_EMAIL` to the verified management email, `DJANGO_ALLOWED_HOSTS` to comma-separated hostnames, `GOOGLE_REDIRECT_URI` to the registered OAuth callback URL, and `DJANGO_CSRF_TRUSTED_ORIGINS` to comma-separated HTTPS origins. The addresses in this document are examples.

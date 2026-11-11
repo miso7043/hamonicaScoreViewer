@@ -59,8 +59,10 @@ DJANGO_ALLOWED_HOSTS=192.168.0.10 python manage.py runserver 0.0.0.0:8000
 - 예정 모바일 주소: `https://scores.example.com/harmonica/m`
 - 앱: `/opt/hamonica-player`, DB: `/var/lib/hamonica-player/db.sqlite3`
 - 서비스: `deploy/hamonica-player.service`, 내부 포트: `127.0.0.1:8030`
-- 운영 환경변수: `DJANGO_SETTINGS_MODULE=config.production`, `DJANGO_SECRET_KEY`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `ALLOWED_GOOGLE_ID`
+- 운영 환경변수: `DJANGO_SETTINGS_MODULE=config.production`, `DJANGO_SECRET_KEY`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `ALLOWED_GOOGLE_ID`, `SCORE_OWNER_EMAIL`, `DJANGO_ALLOWED_HOSTS`, `GOOGLE_REDIRECT_URI`, `DJANGO_CSRF_TRUSTED_ORIGINS`
 - Nginx: `deploy/hamonica-nginx.conf`를 기존 HTTPS 서버에 include하고, http 블록에서 `$arg_state`가 `~^hmp_`이면 `127.0.0.1:8030`, 나머지는 `127.0.0.1:8020`으로 보내는 `$hamonica_callback_backend` map을 정의합니다.
 - 구글 콜백은 기존 등록 주소 `/auth/google/callback`을 재사용합니다. 세션 쿠키 이름은 `hamonica_session`입니다.
 
 현재 소스와 배포 설정은 준비되어 있으며, VPS로의 파일 전송과 서비스 활성화는 아직 완료되지 않았습니다. 서버에 별도 검증용 Python 가상환경을 준비했습니다.
+
+운영 인증정보는 저장소 밖의 서버 환경변수로 관리합니다. `SCORE_OWNER_EMAIL`에는 관리 계정 이메일, `DJANGO_ALLOWED_HOSTS`에는 허용 호스트, `GOOGLE_REDIRECT_URI`에는 등록된 OAuth 콜백 URL, `DJANGO_CSRF_TRUSTED_ORIGINS`에는 허용할 HTTPS 출처를 지정합니다. 문서의 서버 주소는 예시입니다.

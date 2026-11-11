@@ -56,7 +56,7 @@ from unittest.mock import patch
 from django.test import override_settings
 
 
-@override_settings(GOOGLE_AUTH_ENABLED=True, ALLOWED_GOOGLE_ID="allowed-user")
+@override_settings(GOOGLE_AUTH_ENABLED=True, ALLOWED_GOOGLE_ID="allowed-user", SCORE_OWNER_EMAIL="owner@example.com")
 class GoogleAuthenticationTests(TestCase):
     def test_private_routes_require_google_login(self):
         score = Score.objects.create(title="비공개 악보", xml_content=XML)

@@ -4,3 +4,20 @@ __pycache__/
 db.sqlite3
 .DS_Store
 tempSound/
+
+# Local credentials and runtime configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.git-credentials
+credentials.json
+client_secret*.json
+token.json
+service-account*.json
+.aws/
+.codex/
+.agents/

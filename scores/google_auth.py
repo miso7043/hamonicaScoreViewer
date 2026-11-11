@@ -84,8 +84,9 @@ def can_manage_scores(request):
     if not settings.GOOGLE_AUTH_ENABLED:
         return True
     email = request.session.get("score_google_email")
-    if email:
-        return email == "owner@example.com"
+    owner_email = settings.SCORE_OWNER_EMAIL
+    if email and owner_email:
+        return secrets.compare_digest(email, owner_email)
     # Existing owner sessions predate storing the verified email.
     identity = request.session.get("score_google_id", "")
     return bool(settings.ALLOWED_GOOGLE_ID and isinstance(identity, str)
