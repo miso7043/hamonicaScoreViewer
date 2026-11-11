@@ -1,3 +1,4 @@
+from .i18n import tr
 from pathlib import Path
 from django import forms
 
@@ -8,14 +9,14 @@ MAX_XML_SIZE = 10 * 1024 * 1024
 
 
 class ScoreUploadForm(forms.Form):
-    musicxml_file = forms.FileField(label="MusicXML 파일")
+    musicxml_file = forms.FileField(label="MusicXML")
 
     def clean_musicxml_file(self):
         uploaded = self.cleaned_data["musicxml_file"]
         if Path(uploaded.name).suffix.lower() not in {".xml", ".musicxml"}:
-            raise forms.ValidationError(".xml 또는 .musicxml 파일을 선택해 주세요.")
+            raise forms.ValidationError(tr(".xml 또는 .musicxml 파일을 선택해 주세요."))
         if uploaded.size > MAX_XML_SIZE:
-            raise forms.ValidationError("파일 크기는 10MB 이하여야 합니다.")
+            raise forms.ValidationError(tr("파일 크기는 10MB 이하여야 합니다."))
         try:
             xml_content = decode_xml(uploaded.read())
             title, composer = metadata(xml_content)
@@ -41,6 +42,8 @@ class ScoreEditForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields["title"].label = tr("제목")
+        self.fields["composer"].label = tr("작곡가")
         self._original_title = self.instance.title if self.instance.pk else ""
         try:
             self._original_xml_title = metadata(self.instance.xml_content)[0] if self.instance.pk else ""

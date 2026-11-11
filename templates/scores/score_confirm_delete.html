@@ -1,16 +1,16 @@
-{% extends "base.html" %}
-{% block title %}{{ score.title }} 삭제{% endblock %}
-{% block content %}
+{% extends "base.html" %}{% load interface %}
+{% block title %}{{ score.title }} {% tr "삭제" %}{% endblock %}
+{% block content %}{% tr "작곡가 미상" as unknown_composer %}
 <section class="delete-card">
   <div class="delete-icon">!</div>
   <p class="eyebrow">DELETE SCORE</p>
-  <h1>악보를 삭제할까요?</h1>
-  <p><strong>‘{{ score.title }}’</strong>의 XML 데이터가 DB에서 영구적으로 삭제됩니다.</p>
-  <p class="warning">삭제한 악보는 복구할 수 없습니다.</p>
+  <h1>{% tr "악보를 삭제할까요?" %}</h1>
+  <p><strong>‘{{ score.title }}’</strong>{% tr "의 XML 데이터가 DB에서 영구적으로 삭제됩니다." %}</p>
+  <p class="warning">{% tr "삭제한 악보는 복구할 수 없습니다." %}</p>
   <form method="post" class="form-actions">
     {% csrf_token %}
-    <a class="button subtle" href="{% url 'scores:detail' score.pk %}">취소</a>
-    <button class="button danger" type="submit">악보 삭제</button>
+    <a class="button subtle" href="{% url 'scores:detail' score.pk %}">{% tr "취소" %}</a>
+    <button class="button danger" type="submit">{% tr "악보 삭제" %}</button>
   </form>
 </section>
 {% endblock %}

@@ -1,3 +1,4 @@
+from .i18n import tr
 import secrets
 
 from authlib.integrations.django_client import OAuth
@@ -36,15 +37,16 @@ def callback(request):
         token = google_client().authorize_access_token(request)
         user = token.get("userinfo") or {}
     except (OAuthError, ValueError):
-        return HttpResponseForbidden("구글 인증에 실패했습니다. 다시 로그인해 주세요.")
-    if not user.get("email_verified") or not secrets.compare_digest(
-        str(user.get("sub", "")), settings.ALLOWED_GOOGLE_ID
-    ) or not settings.ALLOWED_GOOGLE_ID:
+        return HttpResponseForbidden(tr("구글 인증에 실패했습니다. 다시 로그인해 주세요."))
+    identity = user.get("sub")
+    email = user.get("email")
+    if user.get("email_verified") is not True or not isinstance(identity, str) or not identity or not isinstance(email, str) or not email:
         request.session.flush()
-        return HttpResponseForbidden("허용된 구글 계정으로 로그인해 주세요.")
+        return HttpResponseForbidden(tr("인증된 이메일이 있는 구글 계정으로 로그인해 주세요."))
     target = request.session.pop("score_return_to", reverse("scores:mobile-list"))
     request.session.cycle_key()
-    request.session["score_google_id"] = settings.ALLOWED_GOOGLE_ID
+    request.session["score_google_id"] = identity
+    request.session["score_google_email"] = email.strip().lower()
     request.session.set_expiry(8 * 60 * 60)
     return redirect(target)
 
@@ -57,11 +59,26 @@ class GoogleLoginRequiredMiddleware:
         public = ("/auth/google/", "/auth/google/callback")
         if settings.GOOGLE_AUTH_ENABLED and request.path_info not in public:
             identity = request.session.get("score_google_id", "")
-            if not identity or not secrets.compare_digest(identity, settings.ALLOWED_GOOGLE_ID):
+            if not isinstance(identity, str) or not identity:
                 # Store only a same-site path, never a user-supplied return URL.
                 request.session["score_return_to"] = request.path
                 return redirect("google-login")
+        request.can_manage_scores = can_manage_scores(request)
+        if settings.GOOGLE_AUTH_ENABLED and not request.can_manage_scores and request.path_info.startswith("/admin/"):
+            return HttpResponseForbidden(tr("악보 관리 권한이 없습니다."))
         response = self.get_response(request)
         if settings.GOOGLE_AUTH_ENABLED:
             response["Cache-Control"] = "no-store"
         return response
+
+
+def can_manage_scores(request):
+    if not settings.GOOGLE_AUTH_ENABLED:
+        return True
+    email = request.session.get("score_google_email")
+    if email:
+        return email == "owner@example.com"
+    # Existing owner sessions predate storing the verified email.
+    identity = request.session.get("score_google_id", "")
+    return bool(settings.ALLOWED_GOOGLE_ID and isinstance(identity, str)
+                and secrets.compare_digest(identity, settings.ALLOWED_GOOGLE_ID))

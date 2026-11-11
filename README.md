@@ -9,7 +9,7 @@ A Django and SQLite web app for storing, viewing, editing, and playing MusicXML 
 - Upload `.xml` or `.musicxml` files and store their original XML, title, and composer in SQLite.
 - View scores with four measures per line on desktop or two measures per line on mobile. Layout changes apply only during rendering; the stored MusicXML remains unchanged.
 - Edit score metadata and MusicXML source, preview changes, and delete scores.
-- Play scores with recorded Hohner Special 20 C harmonica samples, including pitches, note durations, rests, chords, and tempo.
+- Play scores with recorded M4A harmonica samples, including pitches, note durations, rests, chords, and tempo.
 - Combine tied notes of the same pitch into a single sustained note, and follow repeat signs and first/second endings.
 - Click a note to start playback from that position or jump there during playback.
 
@@ -55,17 +55,7 @@ Then open `http://192.168.0.10:8000/m` on your phone. Your computer's firewall m
 
 ## Harmonica Samples
 
-Playback uses nine recorded Hohner Special 20 C samples from [VCSL](https://versilian-studios.com/vcsl/). These are not recordings of a 24-hole tremolo harmonica. Attribution and CC0 license details are available in the [sample README](snd/note_snd/vcsl/README.md) and [license file](snd/note_snd/vcsl/LICENSE.txt). The older WAV files directly under `snd/note_snd/` are retained but are not used for playback.
-
-Original recordings are preserved as 24-bit WAV files. The playback files, named `*_play.wav`, have leading silence removed, volume normalized, and sustain sections crossfaded. The samples provide reference pitches across MIDI notes 60–96. Missing pitches, including chromatic notes, are produced by adjusting the playback rate of the nearest sample; timbre can vary more noticeably outside the recorded range.
-
-Long notes loop only the sustain section between 1.04 and 3.0 seconds, without repeating the initial attack.
-
-To regenerate the playback files:
-
-```bash
-.venv/bin/python scripts/prepare_harmonica_samples.py
-```
+Playback uses the 24 M4A recordings in `snd/note_snd/`. The pitch in each filename determines the MIDI note. Missing pitches are played by adjusting the rate of the nearest sample. For long notes, playback loops the sustain section from 1.04 seconds to 3 seconds or the end of the decoded audio, whichever comes first.
 
 ## Tests
 
@@ -75,7 +65,7 @@ python manage.py test
 
 ## VPS Deployment Configuration
 
-The repository includes production settings in [`config/production.py`](config/production.py) and deployment templates in [`deploy/`](deploy/). Production authentication uses Authlib's OpenID Connect validation and allows a single Google account identified by its numeric account ID. See the [Google OpenID Connect documentation](https://developers.google.com/identity/openid-connect/openid-connect) for protocol details.
+The repository includes production settings in [`config/production.py`](config/production.py) and deployment templates in [`deploy/`](deploy/). Production authentication uses Authlib's OpenID Connect validation and allows any Google account with a verified email to view and play scores. Only `owner@example.com` can upload, edit, or delete scores. `ALLOWED_GOOGLE_ID` preserves management access for existing owner sessions created before email storage was added. See the [Google OpenID Connect documentation](https://developers.google.com/identity/openid-connect/openid-connect) for protocol details.
 
 The supplied configuration targets the following layout:
 

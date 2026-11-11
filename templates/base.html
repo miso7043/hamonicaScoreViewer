@@ -1,5 +1,5 @@
-{% load static %}
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}MusicXML 악보함{% endblock %}</title><link rel="stylesheet" href="{% static 'scores/app.css' %}?v=9"><link rel="stylesheet" href="{% static 'scores/delete.css' %}?v=3">{% if mobile %}<link rel="stylesheet" href="{% static 'scores/mobile.css' %}?v=1">{% endif %}{% block head %}{% endblock %}</head>
-<body{% if mobile %} class="mobile-layout"{% endif %}><header class="site-header"><a class="brand" href="{% if mobile %}{% url 'scores:mobile-list' %}{% else %}{% url 'scores:list' %}{% endif %}">MusicXML 악보함</a></header><main class="page-shell">
-{% for message in messages %}<div class="message">{{ message }}</div>{% endfor %}{% block content %}{% endblock %}</main></body></html>
+{% load interface %}{% load static %}
+<!doctype html><html lang="{{ request.LANGUAGE_CODE }}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% tr "MusicXML 악보함" %}{% endblock %}</title><link rel="stylesheet" href="{% static 'scores/app.css' %}?v=16"><link rel="stylesheet" href="{% static 'scores/delete.css' %}?v=3">{% if mobile %}<link rel="stylesheet" href="{% static 'scores/mobile.css' %}?v=4">{% endif %}<link rel="stylesheet" href="{% static 'scores/dock.css' %}?v=3">{% block head %}{% endblock %}</head>
+<body{% if mobile %} class="mobile-layout"{% endif %}><header class="site-header"><a class="brand" href="{% if mobile %}{% url 'scores:mobile-list' %}{% else %}{% url 'scores:list' %}{% endif %}">{% tr "MusicXML 악보함" %}</a></header><main class="page-shell">
+{% for message in messages %}<div class="message">{{ message }}</div>{% endfor %}{% block content %}{% tr "작곡가 미상" as unknown_composer %}{% endblock %}</main></body></html>

@@ -1,3 +1,4 @@
+from .i18n import tr
 import codecs
 import re
 from xml.sax.saxutils import escape
@@ -26,16 +27,16 @@ def decode_xml(data):
     try:
         return data.decode(encoding)
     except (LookupError, UnicodeDecodeError) as exc:
-        raise MusicXMLError("XML 문자 인코딩을 읽을 수 없습니다.") from exc
+        raise MusicXMLError(tr("XML 문자 인코딩을 읽을 수 없습니다.")) from exc
 
 
 def parse_musicxml(xml_content):
     try:
         root = ElementTree.fromstring(xml_content)
     except (ElementTree.ParseError, ValueError) as exc:
-        raise MusicXMLError(f"올바른 XML이 아닙니다: {exc}") from exc
+        raise MusicXMLError(tr("올바른 XML이 아닙니다: %(error)s") % {"error": exc}) from exc
     if local_name(root.tag) not in SUPPORTED_ROOTS:
-        raise MusicXMLError("MusicXML(score-partwise 또는 score-timewise) 파일만 사용할 수 있습니다.")
+        raise MusicXMLError(tr("MusicXML(score-partwise 또는 score-timewise) 파일만 사용할 수 있습니다."))
     return root
 
 
@@ -66,6 +67,6 @@ def update_work_title(xml_content, title):
         return xml_content[:work.end()] + insertion + xml_content[work.end():]
     root_open = re.search(r"<(?:[\w.-]+:)?score-(?:partwise|timewise)\b[^>]*>", xml_content, re.I)
     if not root_open:
-        raise MusicXMLError("MusicXML 루트 요소를 찾을 수 없습니다.")
+        raise MusicXMLError(tr("MusicXML 루트 요소를 찾을 수 없습니다."))
     insertion = f"\n  <work>\n    <work-title>{safe_title}</work-title>\n  </work>"
     return xml_content[:root_open.end()] + insertion + xml_content[root_open.end():]
