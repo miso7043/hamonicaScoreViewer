@@ -34,7 +34,7 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
   ];
   const semitones = {C:0,D:2,E:4,F:5,G:7,A:9,B:11};
   let context, events=[], audioEvents=[], duration=0, offset=0, playRequest=0, timer, animationFrame, audioStartedAt=0, playing=false, activeSources=[];
-  const buffers = new Map();
+  const buffers = new Map(), downloads = new Map();
   const children = (node,name) => Array.from(node.children).filter(child => child.localName===name);
   const first = (node,name) => Array.from(node.getElementsByTagNameNS("*",name))[0];
   const number = (node,name,fallback=0) => Number(first(node,name)?.textContent || fallback);
@@ -150,10 +150,46 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
     }
     events=result; audioEvents=mergeTiedNotes(result); duration=Math.max(cursor,...result.map(note=>note.start+note.duration),0); offset=0; updateStatus();
   }
+  function downloadSample(name) {
+    if (!downloads.has(name)) {
+      const pending = fetch(viewer.dataset.soundBase + name).then(response => {
+        if (!response.ok) throw new Error(`${t("음원 로드 실패", "Failed to load audio sample")}: ${response.status} (${name})`);
+        return response.arrayBuffer();
+      }).catch(error => { downloads.delete(name); throw error; });
+      downloads.set(name, pending);
+    }
+    return downloads.get(name);
+  }
+  function neededSamples() {
+    return [...new Set(audioEvents.map(note => nearestSample(note.midi)))];
+  }
+  async function preloadSamples() {
+    // Fetch every distinct sample used anywhere in this score, including before a clicked note.
+    // Decoding waits for the user's gesture.
+    const queue = neededSamples();
+    await Promise.all(Array.from({length: Math.min(4, queue.length)}, async () => {
+      while (queue.length) {
+        const sample = queue.shift();
+        try { await downloadSample(sample[1]); } catch (_) { /* Retry on play. */ }
+      }
+    }));
+  }
   async function loadBuffer(sample) {
-    if(buffers.has(sample[1])) return buffers.get(sample[1]);
-    const promise=fetch(viewer.dataset.soundBase+sample[1]).then(response=>{if(!response.ok) throw new Error(t("음원 로드 실패", "Failed to load audio sample")); return response.arrayBuffer();}).then(data=>context.decodeAudioData(data)).then(buffer=>{buffers.set(sample[1],buffer); return buffer;}).catch(error=>{buffers.delete(sample[1]); throw error;});
-    buffers.set(sample[1],promise); return promise;
+    const name = sample[1];
+    if (buffers.has(name)) return buffers.get(name);
+    const pending = (async () => {
+      try {
+        return await context.decodeAudioData((await downloadSample(name)).slice(0));
+      } catch (_) {
+        // Some browsers cannot decode AAC/M4A. PCM WAV is the compatibility path.
+        const fallback = "fallback/" + name.replace(/\.m4a$/, ".wav");
+        try { return await context.decodeAudioData((await downloadSample(fallback)).slice(0)); }
+        catch (error) { throw new Error(`${t("음원을 준비하지 못했습니다. 다시 재생해 주세요.", "Could not prepare audio. Please try playing again.")} (${name}): ${error.message}`); }
+      }
+    })().then(buffer => { buffers.set(name, buffer); return buffer; })
+      .catch(error => { buffers.delete(name); throw error; });
+    buffers.set(name, pending);
+    return pending;
   }
   function cancelSources() { activeSources.forEach(source=>{try{source.stop();}catch(_){}}); activeSources=[]; clearInterval(timer); cancelAnimationFrame(animationFrame); highlight([]); }
   function highlight(ids, midis = []) { viewer.dispatchEvent(new CustomEvent("scoreplayhead", {detail:{ids, midis}})); }
@@ -172,30 +208,62 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
     if(!events.length) return;
     if(offset>=duration) offset=0;
     const request=++playRequest;
-    context ||= new (window.AudioContext||window.webkitAudioContext)(); await context.resume();
-    if(request!==playRequest) return;
-    playButton.disabled=true; status.textContent=t("하모니카 음원을 불러오는 중…", "Loading harmonica samples\u2026");
+    playButton.disabled=true;
+    status.textContent=t("악보 전체 음원을 준비하는 중…", "Preparing all score samples…");
     try {
-      const needed=[...new Set(audioEvents.filter(note=>note.start+note.duration>offset).map(note=>nearestSample(note.midi)[1]))];
-      await Promise.all(needed.map(name=>loadBuffer(samples.find(sample=>sample[1]===name))));
+      context ||= new (window.AudioContext||window.webkitAudioContext)();
+      await context.resume();
       if(request!==playRequest) return;
-    } catch(error) { if(request!==playRequest) return; status.textContent=error.message; playButton.disabled=false; return; }
+      const needed=neededSamples();
+      let ready=0;
+      await Promise.all(needed.map(async sample => {
+        await loadBuffer(sample);
+        if(request===playRequest) status.textContent=`${t("악보 전체 음원 준비", "Preparing all score samples")} ${++ready}/${needed.length}`;
+      }));
+      if(request!==playRequest) return;
+      if(context.state === "suspended") await context.resume();
+      if(request!==playRequest) return;
+      if(context.state !== "running") throw new Error(t("오디오가 일시 중단되었습니다. 다시 재생해 주세요.", "Audio is suspended. Please try playing again."));
+    } catch(error) {
+      if(request!==playRequest) return;
+      status.textContent=error.message; playButton.disabled=false; return;
+    }
+    // Start the score clock only after the first and every following sample is decoded.
     playButton.disabled=false; playing=true; playButton.textContent=t("Ⅱ 일시정지", "\u2161 Pause");
     viewer.dispatchEvent(new CustomEvent("scoreplaybackstart"));
-    const audioStart=context.currentTime+.05; audioStartedAt=audioStart-offset;
-    for(const note of audioEvents) {
-      if(note.start+note.duration<=offset || note.start>=duration) continue;
-      const sample=nearestSample(note.midi), source=context.createBufferSource(), gain=context.createGain();
-      const when=audioStart+Math.max(0,note.start-offset), remaining=note.start+note.duration-Math.max(offset,note.start), end=when+remaining;
-      source.buffer=buffers.get(sample[1]); source.playbackRate.value=2**((note.midi-sample[0])/12); source.loop=true; source.loopStart=1.04; source.loopEnd=Math.min(3, source.buffer.duration);
-      gain.gain.setValueAtTime(0,when); gain.gain.linearRampToValueAtTime(.65,when+Math.min(.015,remaining/3)); gain.gain.setValueAtTime(.65,Math.max(when+Math.min(.015,remaining/3),end-Math.min(.06,remaining/3))); gain.gain.linearRampToValueAtTime(0,end);
-      source.connect(gain).connect(context.destination); source.start(when); source.stop(end+.01); activeSources.push(source);
+    const playbackStartOffset=offset, audioStart=context.currentTime+0.5; audioStartedAt=audioStart-playbackStartOffset;
+    // Keep decoded samples in memory, but create audio nodes only for the next second.
+    // Scheduling an entire long score at once can overload the audio engine at startup.
+    const pendingNotes=audioEvents.filter(note=>note.start+note.duration>offset && note.start<duration)
+      .sort((a,b)=>a.start-b.start);
+    let nextNote=0;
+    function scheduleUpcomingNotes() {
+      const horizon=context.currentTime+1;
+      while(nextNote<pendingNotes.length) {
+        const note=pendingNotes[nextNote];
+        const scheduledStart=audioStart+Math.max(0,note.start-playbackStartOffset);
+        if(scheduledStart>horizon) break;
+        nextNote++;
+        const end=audioStartedAt+note.start+note.duration;
+        if(end<=context.currentTime) continue;
+        const sample=nearestSample(note.midi), source=context.createBufferSource(), gain=context.createGain();
+        const when=Math.max(scheduledStart,context.currentTime+.01), remaining=end-when;
+        if(remaining<=0) continue;
+        source.buffer=buffers.get(sample[1]); source.playbackRate.value=2**((note.midi-sample[0])/12); source.loop=source.buffer.duration>1.04; source.loopStart=source.loop ? 1.04 : 0; source.loopEnd=Math.min(3, source.buffer.duration);
+        gain.gain.setValueAtTime(0,when); gain.gain.linearRampToValueAtTime(.65,when+Math.min(.015,remaining/3)); gain.gain.setValueAtTime(.65,Math.max(when+Math.min(.015,remaining/3),end-Math.min(.06,remaining/3))); gain.gain.linearRampToValueAtTime(0,end);
+        source.onended=()=>{ source.disconnect?.(); gain.disconnect?.(); activeSources=activeSources.filter(item=>item!==source); };
+        source.connect(gain).connect(context.destination); source.start(when, 0.2); source.stop(end+.01); activeSources.push(source);
+      }
     }
+    scheduleUpcomingNotes();
     animatePlayhead();
-    timer=setInterval(()=>{ offset=playbackOffset(); updateStatus(); if(offset>=duration){ playing=false; cancelSources(); playButton.textContent=t("▶ 다시 재생", "\u25b6 Replay"); } },100);
+    timer=setInterval(()=>{
+      scheduleUpcomingNotes(); offset=playbackOffset(); updateStatus();
+      if(offset>=duration){ playing=false; cancelSources(); playButton.textContent=t("▶ 다시 재생", "\u25b6 Replay"); }
+    },100);
   }
   function stop() { playRequest++; playButton.disabled=false; playing=false; cancelSources(); offset=0; playButton.textContent=t("▶ 재생", "\u25b6 Play"); updateStatus(); }
-  viewer.addEventListener("scorexmlchange",event=>{stop(); try{parseMusicXML(event.detail.xml);}catch(error){status.textContent=error.message;}});
+  viewer.addEventListener("scorexmlchange",event=>{stop(); try{parseMusicXML(event.detail.xml); void preloadSamples();}catch(error){status.textContent=error.message;}});
   viewer.addEventListener("click", event => {
     const element=event.target.closest("[data-notation] .note");
     if(!element || !viewer.contains(element)) return;
