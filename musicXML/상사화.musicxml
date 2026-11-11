@@ -8,7 +8,7 @@
     <creator type="composer">작곡가 / 편곡가</creator>
     <encoding>
       <software>MuseScore Studio 4.7.5</software>
-      <encoding-date>2026-11-10</encoding-date>
+      <encoding-date>2026-11-11</encoding-date>
       <supports element="accidental" type="yes"/>
       <supports element="beam" type="yes"/>
       <supports element="print" attribute="new-page" type="no"/>
@@ -20,63 +20,6 @@
       <miscellaneous-field name="platform">Linux</miscellaneous-field>
       </miscellaneous>
     </identification>
-  <defaults>
-    <scaling>
-      <millimeters>7</millimeters>
-      <tenths>40</tenths>
-      </scaling>
-    <page-layout>
-      <page-height>1696.72</page-height>
-      <page-width>1200.33</page-width>
-      <page-margins type="even">
-        <left-margin>85.7143</left-margin>
-        <right-margin>85.7143</right-margin>
-        <top-margin>85.7143</top-margin>
-        <bottom-margin>85.7143</bottom-margin>
-        </page-margins>
-      <page-margins type="odd">
-        <left-margin>85.7143</left-margin>
-        <right-margin>85.7143</right-margin>
-        <top-margin>85.7143</top-margin>
-        <bottom-margin>85.7143</bottom-margin>
-        </page-margins>
-      </page-layout>
-    <appearance>
-      <line-width type="light barline">1.8</line-width>
-      <line-width type="heavy barline">5.5</line-width>
-      <line-width type="beam">5</line-width>
-      <line-width type="bracket">4.5</line-width>
-      <line-width type="dashes">1</line-width>
-      <line-width type="enclosure">1</line-width>
-      <line-width type="ending">1.1</line-width>
-      <line-width type="extend">1</line-width>
-      <line-width type="leger">1.6</line-width>
-      <line-width type="pedal">1.1</line-width>
-      <line-width type="octave shift">1.1</line-width>
-      <line-width type="slur middle">2.1</line-width>
-      <line-width type="slur tip">0.5</line-width>
-      <line-width type="staff">1.1</line-width>
-      <line-width type="stem">1</line-width>
-      <line-width type="tie middle">2.1</line-width>
-      <line-width type="tie tip">0.5</line-width>
-      <line-width type="tuplet bracket">1</line-width>
-      <line-width type="wedge">1.2</line-width>
-      <note-size type="cue">70</note-size>
-      <note-size type="grace">70</note-size>
-      <note-size type="grace-cue">49</note-size>
-      </appearance>
-    <music-font font-family="Leland"/>
-    <word-font font-family="Edwin" font-size="10"/>
-    <lyric-font font-family="Edwin" font-size="10"/>
-    </defaults>
-  <credit page="1">
-    <credit-type>title</credit-type>
-    <credit-words default-x="600.17" default-y="1611.01" justify="center" valign="top" font-size="22">상사화</credit-words>
-    </credit>
-  <credit page="1">
-    <credit-type>composer</credit-type>
-    <credit-words default-x="1114.62" default-y="1511.01" justify="right" valign="bottom">작곡, 작사, 노래 안예은</credit-words>
-    </credit>
   <part-list>
     <score-part id="P1">
       <part-name print-object="no">C 트레몰로 하모니카</part-name>
@@ -95,16 +38,7 @@
       </score-part>
     </part-list>
   <part id="P1">
-    <measure number="1" width="269.75">
-      <print>
-        <system-layout>
-          <system-margins>
-            <left-margin>50</left-margin>
-            <right-margin>0</right-margin>
-            </system-margins>
-          <top-system-distance>170</top-system-distance>
-          </system-layout>
-        </print>
+    <measure number="1">
       <attributes>
         <divisions>4</divisions>
         <key>
@@ -119,7 +53,7 @@
           <line>2</line>
           </clef>
         </attributes>
-      <note default-x="78.23" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -129,7 +63,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="141.47" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -139,7 +73,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="204.71" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -150,8 +84,8 @@
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="2" width="174.64">
-      <note default-x="12.5" default-y="10">
+    <measure number="2">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -159,10 +93,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="15"/>
+        <dot/>
         <stem>down</stem>
         </note>
-      <note default-x="92.67" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -170,18 +104,18 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="110.67" default-y="15"/>
+        <dot/>
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="3" width="267.26">
-      <note default-x="12.5" default-y="-20">
+    <measure number="3">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="54.66" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -192,7 +126,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="96.82" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -203,7 +137,7 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="138.98" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -214,7 +148,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="181.14" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -225,7 +159,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="223.3" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -237,8 +171,8 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="4" width="267.26">
-      <note default-x="12.5" default-y="10">
+    <measure number="4">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -249,7 +183,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="54.66" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -260,7 +194,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="96.82" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -271,7 +205,7 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="138.98" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -282,7 +216,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="181.14" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -293,7 +227,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="223.3" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -305,8 +239,9 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="5" width="268.1">
-      <note default-x="58.1" default-y="-5">
+    <measure number="5">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -314,10 +249,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="76.1" default-y="-5"/>
+        <dot/>
         <stem>down</stem>
         </note>
-      <note default-x="138.87" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -328,7 +263,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="181.35" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -339,7 +274,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="223.82" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -351,8 +286,8 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="6" width="222.5">
-      <note default-x="12.5" default-y="10">
+    <measure number="6">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -360,10 +295,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="15"/>
+        <dot/>
         <stem>down</stem>
         </note>
-      <note default-x="93.27" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -373,13 +308,13 @@
         <type>eighth</type>
         <stem>down</stem>
         </note>
-      <note default-x="135.74" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="178.22" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -390,8 +325,8 @@
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="7" width="269.15">
-      <note default-x="12.5" default-y="-5">
+    <measure number="7">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -402,7 +337,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="54.98" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -413,7 +348,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="97.45" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -424,7 +359,7 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="139.93" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -435,7 +370,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="182.4" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -446,7 +381,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="224.88" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -458,8 +393,8 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="8" width="269.15">
-      <note default-x="12.5" default-y="-10">
+    <measure number="8">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -470,7 +405,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="54.98" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -481,7 +416,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="97.45" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -492,7 +427,7 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="139.93" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -503,7 +438,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="182.4" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -514,7 +449,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="224.88" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -526,8 +461,9 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="9" width="214.03">
-      <note default-x="58.1" default-y="-25">
+    <measure number="9">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -535,10 +471,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="76.1" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="135.17" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -546,12 +482,12 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="153.17" default-y="-15"/>
+        <dot/>
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="10" width="270.97">
-      <note default-x="12.5" default-y="-25">
+    <measure number="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -560,18 +496,18 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>사</text>
           </lyric>
         </note>
-      <note default-x="53.03" default-y="-20">
+      <note>
         <rest/>
         <duration>1</duration>
         <voice>1</voice>
         <type>16th</type>
         </note>
-      <note default-x="80.04" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -582,12 +518,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">forward hook</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>랑</text>
           </lyric>
         </note>
-      <note default-x="107.06" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -597,12 +533,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="147.59" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -612,12 +548,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>왜</text>
           </lyric>
         </note>
-      <note default-x="188.12" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -627,12 +563,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="228.64" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -642,14 +578,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
       </measure>
-    <measure number="11" width="271.95">
-      <note default-x="12.5" default-y="-10">
+    <measure number="11">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -659,12 +595,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>고</text>
           </lyric>
         </note>
-      <note default-x="53.03" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -674,12 +610,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>된</text>
           </lyric>
         </note>
-      <note default-x="93.55" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -689,12 +625,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="134.08" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -703,18 +639,18 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>요</text>
           </lyric>
         </note>
-      <note default-x="174.61" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="215.13" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -725,12 +661,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="242.15" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -741,14 +677,14 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>게</text>
           </lyric>
         </note>
       </measure>
-    <measure number="12" width="271.95">
-      <note default-x="12.5" default-y="-10">
+    <measure number="12">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -758,12 +694,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>맞</text>
           </lyric>
         </note>
-      <note default-x="53.03" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -773,12 +709,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>는</text>
           </lyric>
         </note>
-      <note default-x="93.55" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -788,12 +724,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="134.08" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -802,18 +738,18 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>요</text>
           </lyric>
         </note>
-      <note default-x="174.61" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="215.13" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -824,12 +760,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="242.15" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -840,14 +776,15 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>만</text>
           </lyric>
         </note>
       </measure>
-    <measure number="13" width="293.83">
-      <note default-x="58.1" default-y="-10">
+    <measure number="13">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -857,12 +794,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="97.09" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -872,12 +809,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>런</text>
           </lyric>
         </note>
-      <note default-x="136.08" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -887,12 +824,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="175.07" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -903,7 +840,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="214.05" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -913,20 +850,20 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>요</text>
           </lyric>
         </note>
-      <note default-x="253.04" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
       </measure>
-    <measure number="14" width="245.67">
-      <note default-x="12.5" default-y="-25">
+    <measure number="14">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -934,15 +871,15 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-50.48" relative-x="1" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>고</text>
           </lyric>
         </note>
-      <note default-x="61.92" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -953,12 +890,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">forward hook</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>우</text>
           </lyric>
         </note>
-      <note default-x="87.92" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -968,12 +905,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>얼</text>
           </lyric>
         </note>
-      <note default-x="126.9" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -983,12 +920,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>굴</text>
           </lyric>
         </note>
-      <note default-x="165.89" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -998,12 +935,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>한</text>
           </lyric>
         </note>
-      <note default-x="204.88" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1013,14 +950,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>번</text>
           </lyric>
         </note>
       </measure>
-    <measure number="15" width="263.23">
-      <note default-x="12.5" default-y="-10">
+    <measure number="15">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1030,12 +967,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>못</text>
           </lyric>
         </note>
-      <note default-x="51.49" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1045,12 +982,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>보</text>
           </lyric>
         </note>
-      <note default-x="90.48" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -1060,12 +997,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>고</text>
           </lyric>
         </note>
-      <note default-x="129.46" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1074,18 +1011,18 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>서</text>
           </lyric>
         </note>
-      <note default-x="168.45" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="207.44" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1096,12 +1033,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="233.43" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1112,14 +1049,14 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
       </measure>
-    <measure number="16" width="226.17">
-      <note default-x="12.5" default-y="-25">
+    <measure number="16">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1127,15 +1064,15 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>보</text>
           </lyric>
         </note>
-      <note default-x="61.92" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1146,12 +1083,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">forward hook</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>낼</text>
           </lyric>
         </note>
-      <note default-x="87.92" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1161,12 +1098,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>수</text>
           </lyric>
         </note>
-      <note default-x="126.9" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1175,12 +1112,12 @@
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>없</text>
           </lyric>
         </note>
-      <note default-x="185.39" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1189,14 +1126,15 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-50.48" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>는</text>
           </lyric>
         </note>
       </measure>
-    <measure number="17" width="214.03">
-      <note default-x="58.1" default-y="-25">
+    <measure number="17">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1204,23 +1142,23 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="76.1" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>데</text>
           </lyric>
         </note>
-      <note default-x="135.17" default-y="-20">
+      <note>
         <rest/>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="149.57" default-y="-15"/>
+        <dot/>
         </note>
       </measure>
-    <measure number="18" width="270.97">
-      <note default-x="12.5" default-y="-25">
+    <measure number="18">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1229,18 +1167,18 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>사</text>
           </lyric>
         </note>
-      <note default-x="53.03" default-y="-20">
+      <note>
         <rest/>
         <duration>1</duration>
         <voice>1</voice>
         <type>16th</type>
         </note>
-      <note default-x="80.04" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1251,12 +1189,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">forward hook</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>랑</text>
           </lyric>
         </note>
-      <note default-x="107.06" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1266,12 +1204,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="147.59" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1281,12 +1219,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>왜</text>
           </lyric>
         </note>
-      <note default-x="188.12" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1296,12 +1234,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="228.64" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1311,14 +1249,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
       </measure>
-    <measure number="19" width="271.95">
-      <note default-x="12.5" default-y="-10">
+    <measure number="19">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1328,12 +1266,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>아</text>
           </lyric>
         </note>
-      <note default-x="53.03" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1343,12 +1281,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>픈</text>
           </lyric>
         </note>
-      <note default-x="93.55" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -1358,12 +1296,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="134.08" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1372,18 +1310,18 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>요</text>
           </lyric>
         </note>
-      <note default-x="174.61" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="215.13" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1394,12 +1332,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="242.15" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1410,14 +1348,14 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>게</text>
           </lyric>
         </note>
       </measure>
-    <measure number="20" width="271.95">
-      <note default-x="12.5" default-y="-10">
+    <measure number="20">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1427,12 +1365,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>맞</text>
           </lyric>
         </note>
-      <note default-x="53.03" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1442,12 +1380,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>는</text>
           </lyric>
         </note>
-      <note default-x="93.55" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -1457,12 +1395,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="134.08" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1471,18 +1409,18 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>요</text>
           </lyric>
         </note>
-      <note default-x="174.61" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="215.13" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1493,12 +1431,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="242.15" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1513,14 +1451,15 @@
         <notations>
           <tied type="start"/>
           </notations>
-        <lyric number="1" default-y="-46.77" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>만</text>
           </lyric>
         </note>
       </measure>
-    <measure number="21" width="288.99">
-      <note default-x="58.1" default-y="-15">
+    <measure number="21">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1536,7 +1475,7 @@
           <tied type="stop"/>
           </notations>
         </note>
-      <note default-x="84.28" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1547,12 +1486,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="110.47" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1562,12 +1501,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>런</text>
           </lyric>
         </note>
-      <note default-x="149.74" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -1577,12 +1516,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="189.01" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1591,20 +1530,20 @@
         <voice>1</voice>
         <type>quarter</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>요</text>
           </lyric>
         </note>
-      <note default-x="247.92" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
       </measure>
-    <measure number="22" width="247.35">
-      <note default-x="12.5" default-y="-25">
+    <measure number="22">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1612,15 +1551,15 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>하</text>
           </lyric>
         </note>
-      <note default-x="62.28" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1631,12 +1570,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">forward hook</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>얀</text>
           </lyric>
         </note>
-      <note default-x="88.47" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1646,12 +1585,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>손</text>
           </lyric>
         </note>
-      <note default-x="127.74" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1661,12 +1600,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>한</text>
           </lyric>
         </note>
-      <note default-x="167.01" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1676,12 +1615,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>번</text>
           </lyric>
         </note>
-      <note default-x="206.28" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1691,14 +1630,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>을</text>
           </lyric>
         </note>
       </measure>
-    <measure number="23" width="264.84">
-      <note default-x="12.5" default-y="-10">
+    <measure number="23">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1708,12 +1647,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>못</text>
           </lyric>
         </note>
-      <note default-x="51.77" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1723,12 +1662,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>잡</text>
           </lyric>
         </note>
-      <note default-x="91.04" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -1738,12 +1677,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>고</text>
           </lyric>
         </note>
-      <note default-x="130.32" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1752,18 +1691,18 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>서</text>
           </lyric>
         </note>
-      <note default-x="169.59" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="208.86" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1774,12 +1713,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="235.04" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1790,14 +1729,14 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
       </measure>
-    <measure number="24" width="227.72">
-      <note default-x="12.5" default-y="-25">
+    <measure number="24">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1805,15 +1744,15 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>보</text>
           </lyric>
         </note>
-      <note default-x="62.28" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1824,12 +1763,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">forward hook</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>낼</text>
           </lyric>
         </note>
-      <note default-x="88.47" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -1839,12 +1778,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>수</text>
           </lyric>
         </note>
-      <note default-x="127.74" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1853,12 +1792,12 @@
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>없</text>
           </lyric>
         </note>
-      <note default-x="186.65" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1867,14 +1806,15 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>는</text>
           </lyric>
         </note>
       </measure>
-    <measure number="25" width="261.07">
-      <note default-x="58.1" default-y="-25">
+    <measure number="25">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1882,23 +1822,23 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="76.1" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>데</text>
           </lyric>
         </note>
-      <note default-x="158.69" default-y="-20">
+      <note>
         <rest/>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="173.09" default-y="-15"/>
+        <dot/>
         </note>
       </measure>
-    <measure number="26" width="215.47">
-      <note default-x="12.5" default-y="-60">
+    <measure number="26">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1906,10 +1846,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-55"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="113.08" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1917,12 +1857,12 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="131.09" default-y="-35"/>
+        <dot/>
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="27" width="273.58">
-      <note default-x="12.5" default-y="-45">
+    <measure number="27">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1933,7 +1873,7 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="65.4" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1944,7 +1884,7 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="118.29" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1955,7 +1895,7 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="171.19" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1963,12 +1903,12 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="189.19" default-y="-35"/>
+        <dot/>
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="28" width="278.79">
-      <note default-x="12.5" default-y="-45">
+    <measure number="28">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1978,7 +1918,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="91.85" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1988,7 +1928,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="144.74" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1998,7 +1938,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="224.09" default-y="-50">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2009,8 +1949,9 @@
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="29" width="285.03">
-      <note default-x="58.1" default-y="-45">
+    <measure number="29">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2020,7 +1961,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="134.83" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2030,7 +1971,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="185.97" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -2038,12 +1979,12 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="203.98" default-y="-35"/>
+        <dot/>
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="30" width="208.82">
-      <note default-x="12.5" default-y="-60">
+    <measure number="30">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2051,10 +1992,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-55"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="109.76" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -2062,12 +2003,12 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="127.76" default-y="-35"/>
+        <dot/>
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="31" width="265.01">
-      <note default-x="12.5" default-y="-45">
+    <measure number="31">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2078,7 +2019,7 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="63.65" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -2089,7 +2030,7 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="114.8" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2100,7 +2041,7 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="165.95" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -2108,12 +2049,12 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="183.95" default-y="-35"/>
+        <dot/>
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="32" width="270.04">
-      <note default-x="12.5" default-y="-60">
+    <measure number="32">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2123,7 +2064,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="89.22" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2133,7 +2074,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="140.37" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2143,7 +2084,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="217.09" default-y="-65">
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2154,8 +2095,9 @@
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="33" width="276.93">
-      <note default-x="58.1" default-y="-60">
+    <measure number="33">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2163,16 +2105,16 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="76.1" default-y="-55"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="131.43" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="170" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2183,12 +2125,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>다</text>
           </lyric>
         </note>
-      <note default-x="195.71" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2199,12 +2141,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>시</text>
           </lyric>
         </note>
-      <note default-x="221.42" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2215,12 +2157,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>돌</text>
           </lyric>
         </note>
-      <note default-x="247.13" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -2231,14 +2173,14 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>아</text>
           </lyric>
         </note>
       </measure>
-    <measure number="34" width="245.45">
-      <note default-x="12.5" default-y="-5">
+    <measure number="34">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2248,12 +2190,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>올</text>
           </lyric>
         </note>
-      <note default-x="51.06" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -2263,12 +2205,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>수</text>
           </lyric>
         </note>
-      <note default-x="89.63" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -2278,12 +2220,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>업</text>
           </lyric>
         </note>
-      <note default-x="128.19" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2292,19 +2234,19 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>는</text>
           </lyric>
         </note>
-      <note default-x="166.76" default-y="-20">
+      <note>
         <rest/>
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="182.8" default-y="-15"/>
+        <dot/>
         </note>
-      <note default-x="215.65" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -2313,14 +2255,14 @@
         <voice>1</voice>
         <type>16th</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>그</text>
           </lyric>
         </note>
       </measure>
-    <measure number="35" width="260.84">
-      <note default-x="12.5" default-y="-5">
+    <measure number="35">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2330,12 +2272,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>험</text>
           </lyric>
         </note>
-      <note default-x="51.06" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -2345,12 +2287,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>한</text>
           </lyric>
         </note>
-      <note default-x="89.63" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -2360,12 +2302,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>길</text>
           </lyric>
         </note>
-      <note default-x="128.19" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2375,12 +2317,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>위</text>
           </lyric>
         </note>
-      <note default-x="166.76" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -2390,18 +2332,18 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>에</text>
           </lyric>
         </note>
-      <note default-x="205.32" default-y="-20">
+      <note>
         <rest/>
         <duration>1</duration>
         <voice>1</voice>
         <type>16th</type>
         </note>
-      <note default-x="231.03" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2410,14 +2352,14 @@
         <voice>1</voice>
         <type>16th</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>어</text>
           </lyric>
         </note>
       </measure>
-    <measure number="36" width="245.69">
-      <note default-x="12.5" default-y="-25">
+    <measure number="36">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2427,12 +2369,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>찌</text>
           </lyric>
         </note>
-      <note default-x="51.06" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2442,12 +2384,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>하</text>
           </lyric>
         </note>
-      <note default-x="89.63" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2457,12 +2399,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>다</text>
           </lyric>
         </note>
-      <note default-x="128.19" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -2472,12 +2414,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="166.76" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2487,12 +2429,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>르</text>
           </lyric>
         </note>
-      <note default-x="205.32" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -2502,14 +2444,15 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>셨</text>
           </lyric>
         </note>
       </measure>
-    <measure number="37" width="279.86">
-      <note default-x="58.1" default-y="-5">
+    <measure number="37">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2518,18 +2461,18 @@
         <voice>1</voice>
         <type>quarter</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>소</text>
           </lyric>
         </note>
-      <note default-x="115.69" default-y="-20">
+      <note>
         <rest/>
         <duration>4</duration>
         <voice>1</voice>
         <type>quarter</type>
         </note>
-      <note default-x="173.28" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2540,12 +2483,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>내</text>
           </lyric>
         </note>
-      <note default-x="198.87" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2556,12 +2499,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="224.47" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2572,12 +2515,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="250.06" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -2588,14 +2531,14 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>야</text>
           </lyric>
         </note>
       </measure>
-    <measure number="38" width="244.54">
-      <note default-x="12.5" default-y="-5">
+    <measure number="38">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2605,12 +2548,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>안</text>
           </lyric>
         </note>
-      <note default-x="50.89" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -2620,12 +2563,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>했</text>
           </lyric>
         </note>
-      <note default-x="89.28" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -2635,12 +2578,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>었</text>
           </lyric>
         </note>
-      <note default-x="127.67" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2649,19 +2592,19 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>던</text>
           </lyric>
         </note>
-      <note default-x="166.07" default-y="-20">
+      <note>
         <rest/>
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="182.11" default-y="-15"/>
+        <dot/>
         </note>
-      <note default-x="214.73" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -2670,14 +2613,14 @@
         <voice>1</voice>
         <type>16th</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>그</text>
           </lyric>
         </note>
       </measure>
-    <measure number="39" width="259.85">
-      <note default-x="12.5" default-y="-5">
+    <measure number="39">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2687,12 +2630,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>험</text>
           </lyric>
         </note>
-      <note default-x="50.89" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -2702,12 +2645,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>한</text>
           </lyric>
         </note>
-      <note default-x="89.28" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -2717,12 +2660,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>길</text>
           </lyric>
         </note>
-      <note default-x="127.67" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2732,12 +2675,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>위</text>
           </lyric>
         </note>
-      <note default-x="166.07" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -2747,18 +2690,18 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>에</text>
           </lyric>
         </note>
-      <note default-x="204.46" default-y="-20">
+      <note>
         <rest/>
         <duration>1</duration>
         <voice>1</voice>
         <type>16th</type>
         </note>
-      <note default-x="230.05" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2767,14 +2710,14 @@
         <voice>1</voice>
         <type>16th</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>그</text>
           </lyric>
         </note>
       </measure>
-    <measure number="40" width="244.65">
-      <note default-x="12.5" default-y="-25">
+    <measure number="40">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2784,12 +2727,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>대</text>
           </lyric>
         </note>
-      <note default-x="50.89" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2799,12 +2742,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="89.28" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2814,12 +2757,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>왜</text>
           </lyric>
         </note>
-      <note default-x="127.67" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -2829,12 +2772,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="166.07" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2844,12 +2787,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>르</text>
           </lyric>
         </note>
-      <note default-x="204.46" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -2859,14 +2802,15 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>셨</text>
           </lyric>
         </note>
       </measure>
-    <measure number="41" width="266.77">
-      <note default-x="58.1" default-y="-5">
+    <measure number="41">
+      <print new-page="yes" page-number="2"/>
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2874,14 +2818,14 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="76.1" default-y="-5"/>
+        <dot/>
         <stem>down</stem>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>소</text>
           </lyric>
         </note>
-      <note default-x="147.47" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2891,22 +2835,22 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="217.97" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
       </measure>
-    <measure number="42" width="244.67">
-      <note default-x="12.5" default-y="-20">
+    <measure number="42">
+      <note>
         <rest/>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="26.9" default-y="-15"/>
+        <dot/>
         </note>
-      <note default-x="101.87" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -2916,12 +2860,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>기</text>
           </lyric>
         </note>
-      <note default-x="148.87" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -2931,12 +2875,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>다</text>
           </lyric>
         </note>
-      <note default-x="195.87" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -2946,14 +2890,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
       </measure>
-    <measure number="43" width="221.17">
-      <note default-x="12.5" default-y="10">
+    <measure number="43">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -2961,14 +2905,14 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="15"/>
+        <dot/>
         <stem>down</stem>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>던</text>
           </lyric>
         </note>
-      <note default-x="101.87" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -2978,7 +2922,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="172.37" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -2987,14 +2931,14 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>봄</text>
           </lyric>
         </note>
       </measure>
-    <measure number="44" width="296.3">
-      <note default-x="12.5" default-y="-5">
+    <measure number="44">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3004,12 +2948,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="59.5" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3019,12 +2963,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="106.5" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3035,14 +2979,14 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" bezier-x="9.931561" bezier-y="12.93773" number="1"/>
+          <slur type="start" number="1"/>
           </notations>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>고</text>
           </lyric>
         </note>
-      <note default-x="153.5" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3053,14 +2997,14 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="stop" number="1" bezier-x="-13.762184" bezier-y="8.753459"/>
+          <slur type="stop" number="1"/>
           </notations>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>있</text>
           </lyric>
         </note>
-      <note default-x="200.5" default-y="0">
+      <note>
         <pitch>
           <step>F</step>
           <octave>5</octave>
@@ -3071,7 +3015,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="247.5" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -3081,14 +3025,15 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>데</text>
           </lyric>
         </note>
       </measure>
-    <measure number="45" width="304.13">
-      <note default-x="58.1" default-y="10">
+    <measure number="45">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -3098,12 +3043,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="99.26" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -3111,15 +3056,15 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="117.26" default-y="5"/>
+        <dot/>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
-      <note default-x="151.43" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3130,12 +3075,12 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">backward hook</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="178.87" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3145,12 +3090,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>를</text>
           </lyric>
         </note>
-      <note default-x="220.02" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3160,12 +3105,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>떠</text>
           </lyric>
         </note>
-      <note default-x="261.18" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -3176,16 +3121,16 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <notations>
-          <slur type="start" bezier-x="16.102052" bezier-y="9.256482" number="1"/>
+          <slur type="start" number="1"/>
           </notations>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
       </measure>
-    <measure number="46" width="240.65">
-      <note default-x="12.5" default-y="-5">
+    <measure number="46">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3195,20 +3140,20 @@
         <type>quarter</type>
         <stem>down</stem>
         <notations>
-          <slur type="stop" number="1" bezier-x="-11.85463" bezier-y="14.297772"/>
+          <slur type="stop" number="1"/>
           </notations>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="74.23" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="115.39" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3218,12 +3163,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>긴</text>
           </lyric>
         </note>
-      <note default-x="156.54" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -3233,12 +3178,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>긴</text>
           </lyric>
         </note>
-      <note default-x="197.7" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -3248,14 +3193,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>겨</text>
           </lyric>
         </note>
       </measure>
-    <measure number="47" width="195.45">
-      <note default-x="12.5" default-y="10">
+    <measure number="47">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -3263,14 +3208,14 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="15"/>
+        <dot/>
         <stem>down</stem>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>울</text>
           </lyric>
         </note>
-      <note default-x="90.76" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -3280,7 +3225,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="152.49" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -3289,20 +3234,20 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>이</text>
           </lyric>
         </note>
       </measure>
-    <measure number="48" width="288.67">
-      <note default-x="12.5" default-y="-20">
+    <measure number="48">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="53.66" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3313,12 +3258,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>모</text>
           </lyric>
         </note>
-      <note default-x="81.09" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3329,12 +3274,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>두</text>
           </lyric>
         </note>
-      <note default-x="108.53" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3346,7 +3291,7 @@
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
         </note>
-      <note default-x="135.97" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3357,12 +3302,12 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>지</text>
           </lyric>
         </note>
-      <note default-x="163.4" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3372,12 +3317,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>났</text>
           </lyric>
         </note>
-      <note default-x="204.56" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3387,12 +3332,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>는</text>
           </lyric>
         </note>
-      <note default-x="245.71" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -3402,20 +3347,21 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>데</text>
           </lyric>
         </note>
       </measure>
-    <measure number="49" width="355.72">
-      <note default-x="58.1" default-y="-20">
+    <measure number="49">
+      <print new-system="yes"/>
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="102.48" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3426,12 +3372,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">forward hook</beam>
-        <lyric number="1" default-y="-54.26" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>왜</text>
           </lyric>
         </note>
-      <note default-x="132.06" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3441,12 +3387,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.26" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="176.43" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -3457,12 +3403,12 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">backward hook</beam>
-        <lyric number="1" default-y="-54.26" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>를</text>
           </lyric>
         </note>
-      <note default-x="206.01" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3473,12 +3419,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-54.26" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>떠</text>
           </lyric>
         </note>
-      <note default-x="235.59" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3489,12 +3435,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-54.26" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="265.17" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3505,7 +3451,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="309.55" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3515,14 +3461,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.26" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>가</text>
           </lyric>
         </note>
       </measure>
-    <measure number="50" width="183.05">
-      <note default-x="12.5" default-y="-25">
+    <measure number="50">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3530,23 +3476,23 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
-        <lyric number="1" default-y="-54.26" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="96.87" default-y="-20">
+      <note>
         <rest/>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="111.28" default-y="-15"/>
+        <dot/>
         </note>
       </measure>
-    <measure number="51" width="209.6">
-      <note default-x="12.5" default-y="-25">
+    <measure number="51">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3554,10 +3500,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="96.87" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3567,7 +3513,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="163.43" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3578,8 +3524,8 @@
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="52" width="280.53">
-      <note default-x="12.5" default-y="-30">
+    <measure number="52">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3590,7 +3536,7 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="56.87" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3601,7 +3547,7 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="101.24" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -3612,7 +3558,7 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="145.62" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -3623,7 +3569,7 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="189.99" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3634,7 +3580,7 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="234.36" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3646,8 +3592,9 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="53" width="333.59">
-      <note default-x="58.1" default-y="-25">
+    <measure number="53">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3658,7 +3605,7 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="103.72" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3669,7 +3616,7 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="149.33" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3680,7 +3627,7 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="194.94" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -3691,7 +3638,7 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="240.56" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3702,7 +3649,7 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="286.17" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3714,8 +3661,8 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="54" width="237.88">
-      <note default-x="12.5" default-y="-40">
+    <measure number="54">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3723,10 +3670,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-35"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="99.24" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3737,7 +3684,7 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="144.85" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3748,7 +3695,7 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="190.46" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3760,8 +3707,8 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="55" width="215.07">
-      <note default-x="12.5" default-y="-25">
+    <measure number="55">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3769,10 +3716,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="99.24" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3782,7 +3729,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="167.66" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3793,8 +3740,8 @@
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="56" width="242.37">
-      <note default-x="12.5" default-y="-30">
+    <measure number="56">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3804,7 +3751,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="58.11" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3814,7 +3761,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="126.53" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3824,7 +3771,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="194.96" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3835,8 +3782,9 @@
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="57" width="243.05">
-      <note default-x="58.1" default-y="-45">
+    <measure number="57">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -3844,10 +3792,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="76.1" default-y="-45"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="137.23" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3857,7 +3805,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="199.64" default-y="-65">
+      <note>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3868,8 +3816,8 @@
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="58" width="246.26">
-      <note default-x="12.5" default-y="-60">
+    <measure number="58">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -3877,10 +3825,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-55"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="91.62" default-y="-60">
+      <note>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -3890,7 +3838,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="133.23" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3901,12 +3849,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>다</text>
           </lyric>
         </note>
-      <note default-x="160.98" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -3917,12 +3865,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>시</text>
           </lyric>
         </note>
-      <note default-x="188.72" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3933,12 +3881,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>돌</text>
           </lyric>
         </note>
-      <note default-x="216.46" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3949,14 +3897,14 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>아</text>
           </lyric>
         </note>
       </measure>
-    <measure number="59" width="261.49">
-      <note default-x="12.5" default-y="-5">
+    <measure number="59">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -3966,12 +3914,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>올</text>
           </lyric>
         </note>
-      <note default-x="54.11" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -3981,12 +3929,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>수</text>
           </lyric>
         </note>
-      <note default-x="95.72" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -3996,12 +3944,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>없</text>
           </lyric>
         </note>
-      <note default-x="137.33" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4010,19 +3958,19 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>는</text>
           </lyric>
         </note>
-      <note default-x="178.94" default-y="-20">
+      <note>
         <rest/>
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="194.99" default-y="-15"/>
+        <dot/>
         </note>
-      <note default-x="231.69" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4031,14 +3979,14 @@
         <voice>1</voice>
         <type>16th</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>그</text>
           </lyric>
         </note>
       </measure>
-    <measure number="60" width="278.1">
-      <note default-x="12.5" default-y="-5">
+    <measure number="60">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4048,12 +3996,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>험</text>
           </lyric>
         </note>
-      <note default-x="54.11" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -4063,12 +4011,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>한</text>
           </lyric>
         </note>
-      <note default-x="95.72" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -4078,12 +4026,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>길</text>
           </lyric>
         </note>
-      <note default-x="137.33" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4093,12 +4041,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>위</text>
           </lyric>
         </note>
-      <note default-x="178.94" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4108,18 +4056,18 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>에</text>
           </lyric>
         </note>
-      <note default-x="220.55" default-y="-20">
+      <note>
         <rest/>
         <duration>1</duration>
         <voice>1</voice>
         <type>16th</type>
         </note>
-      <note default-x="248.3" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4128,14 +4076,15 @@
         <voice>1</voice>
         <type>16th</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>어</text>
           </lyric>
         </note>
       </measure>
-    <measure number="61" width="290.25">
-      <note default-x="58.1" default-y="-25">
+    <measure number="61">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4145,12 +4094,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>찌</text>
           </lyric>
         </note>
-      <note default-x="96.49" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4160,12 +4109,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>하</text>
           </lyric>
         </note>
-      <note default-x="134.89" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4175,12 +4124,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>다</text>
           </lyric>
         </note>
-      <note default-x="173.28" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4190,12 +4139,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="211.67" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4205,12 +4154,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>르</text>
           </lyric>
         </note>
-      <note default-x="250.06" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -4220,14 +4169,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>셨</text>
           </lyric>
         </note>
       </measure>
-    <measure number="62" width="234.26">
-      <note default-x="12.5" default-y="-5">
+    <measure number="62">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4236,18 +4185,18 @@
         <voice>1</voice>
         <type>quarter</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>소</text>
           </lyric>
         </note>
-      <note default-x="70.09" default-y="-20">
+      <note>
         <rest/>
         <duration>4</duration>
         <voice>1</voice>
         <type>quarter</type>
         </note>
-      <note default-x="127.67" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4258,12 +4207,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>내</text>
           </lyric>
         </note>
-      <note default-x="153.27" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4274,12 +4223,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="178.86" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4290,12 +4239,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="204.46" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4306,14 +4255,14 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>야</text>
           </lyric>
         </note>
       </measure>
-    <measure number="63" width="244.54">
-      <note default-x="12.5" default-y="-5">
+    <measure number="63">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4323,12 +4272,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>안</text>
           </lyric>
         </note>
-      <note default-x="50.89" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -4338,12 +4287,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>했</text>
           </lyric>
         </note>
-      <note default-x="89.28" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -4353,12 +4302,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>었</text>
           </lyric>
         </note>
-      <note default-x="127.67" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4367,19 +4316,19 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>던</text>
           </lyric>
         </note>
-      <note default-x="166.07" default-y="-20">
+      <note>
         <rest/>
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="182.11" default-y="-15"/>
+        <dot/>
         </note>
-      <note default-x="214.73" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4388,14 +4337,14 @@
         <voice>1</voice>
         <type>16th</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>그</text>
           </lyric>
         </note>
       </measure>
-    <measure number="64" width="259.85">
-      <note default-x="12.5" default-y="-5">
+    <measure number="64">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4405,12 +4354,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>험</text>
           </lyric>
         </note>
-      <note default-x="50.89" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -4420,12 +4369,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>한</text>
           </lyric>
         </note>
-      <note default-x="89.28" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -4435,12 +4384,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>길</text>
           </lyric>
         </note>
-      <note default-x="127.67" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4450,12 +4399,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>위</text>
           </lyric>
         </note>
-      <note default-x="166.07" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4465,18 +4414,18 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>에</text>
           </lyric>
         </note>
-      <note default-x="204.46" default-y="-20">
+      <note>
         <rest/>
         <duration>1</duration>
         <voice>1</voice>
         <type>16th</type>
         </note>
-      <note default-x="230.05" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4485,14 +4434,15 @@
         <voice>1</voice>
         <type>16th</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-54.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>그</text>
           </lyric>
         </note>
       </measure>
-    <measure number="65" width="418.22">
-      <note default-x="58.1" default-y="-25">
+    <measure number="65">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4502,12 +4452,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>대</text>
           </lyric>
         </note>
-      <note default-x="117.82" default-y="-20">
+      <note>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4517,12 +4467,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="177.54" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4532,12 +4482,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>왜</text>
           </lyric>
         </note>
-      <note default-x="237.26" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4547,12 +4497,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="296.98" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4562,12 +4512,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>르</text>
           </lyric>
         </note>
-      <note default-x="356.7" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -4577,14 +4527,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>셨</text>
           </lyric>
         </note>
       </measure>
-    <measure number="66" width="184.64">
-      <note default-x="12.5" default-y="-5">
+    <measure number="66">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4592,16 +4542,16 @@
         <duration>12</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot default-x="30.5" default-y="-5"/>
+        <dot/>
         <stem>down</stem>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>소</text>
           </lyric>
         </note>
       </measure>
-    <measure number="67" width="241.41">
-      <note default-x="12.5" default-y="-5">
+    <measure number="67">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4609,19 +4559,19 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-5"/>
+        <dot/>
         <stem>down</stem>
         </note>
-      <note default-x="126.06" default-y="-20">
+      <note>
         <rest/>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="140.46" default-y="-15"/>
+        <dot/>
         </note>
       </measure>
-    <measure number="68" width="184.64">
-      <note default-x="12.5" default-y="10">
+    <measure number="68">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -4629,16 +4579,17 @@
         <duration>12</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot default-x="30.5" default-y="15"/>
+        <dot/>
         <stem>down</stem>
-        <lyric number="1" default-y="-51.81" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>아</text>
           </lyric>
         </note>
       </measure>
-    <measure number="69" width="279.76">
-      <note default-x="58.1" default-y="10">
+    <measure number="69">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -4648,7 +4599,7 @@
         <type>eighth</type>
         <stem>down</stem>
         </note>
-      <note default-x="108.05" default-y="20">
+      <note>
         <pitch>
           <step>C</step>
           <octave>6</octave>
@@ -4658,7 +4609,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="182.98" default-y="20">
+      <note>
         <pitch>
           <step>C</step>
           <octave>6</octave>
@@ -4666,18 +4617,18 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="200.98" default-y="25"/>
+        <dot/>
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="70" width="310.72">
-      <note default-x="12.5" default-y="-20">
+    <measure number="70">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="62.45" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -4687,12 +4638,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>우</text>
           </lyric>
         </note>
-      <note default-x="112.4" default-y="20">
+      <note>
         <pitch>
           <step>C</step>
           <octave>6</octave>
@@ -4703,7 +4654,7 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="162.35" default-y="30">
+      <note>
         <pitch>
           <step>E</step>
           <octave>6</octave>
@@ -4713,12 +4664,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>middle</syllabic>
           <text>우</text>
           </lyric>
         </note>
-      <note default-x="212.3" default-y="25">
+      <note>
         <pitch>
           <step>D</step>
           <octave>6</octave>
@@ -4726,11 +4677,11 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="230.3" default-y="25"/>
+        <dot/>
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="275.62" default-y="20">
+      <note>
         <pitch>
           <step>C</step>
           <octave>6</octave>
@@ -4743,8 +4694,8 @@
         <beam number="2">backward hook</beam>
         </note>
       </measure>
-    <measure number="71" width="204.26">
-      <note default-x="12.5" default-y="30">
+    <measure number="71">
+      <note>
         <pitch>
           <step>E</step>
           <octave>6</octave>
@@ -4752,23 +4703,23 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="35"/>
+        <dot/>
         <stem>down</stem>
-        <lyric number="1" default-y="-40" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>우</text>
           </lyric>
         </note>
-      <note default-x="107.48" default-y="-20">
+      <note>
         <rest/>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="121.88" default-y="-15"/>
+        <dot/>
         </note>
       </measure>
-    <measure number="72" width="234.16">
-      <note default-x="12.5" default-y="10">
+    <measure number="72">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -4776,10 +4727,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="15"/>
+        <dot/>
         <stem>down</stem>
         </note>
-      <note default-x="107.48" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -4789,7 +4740,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="182.41" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -4800,8 +4751,9 @@
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="73" width="327.01">
-      <note default-x="58.1" default-y="5">
+    <measure number="73">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -4812,7 +4764,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="102.62" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4823,7 +4775,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="147.14" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4834,7 +4786,7 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="191.66" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4845,7 +4797,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="236.17" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4856,7 +4808,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="280.69" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -4868,8 +4820,8 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="74" width="259.15">
-      <note default-x="12.5" default-y="-10">
+    <measure number="74">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4880,7 +4832,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="57.02" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4891,7 +4843,7 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="101.54" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -4902,7 +4854,7 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         </note>
-      <note default-x="146.05" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4912,7 +4864,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="212.83" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4923,8 +4875,8 @@
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="75" width="232.5">
-      <note default-x="12.5" default-y="-25">
+    <measure number="75">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4932,10 +4884,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
         </note>
-      <note default-x="97.15" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -4945,12 +4897,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-42.13" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>기</text>
           </lyric>
         </note>
-      <note default-x="141.67" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -4960,12 +4912,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-42.13" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>다</text>
           </lyric>
         </note>
-      <note default-x="186.19" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4975,14 +4927,14 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-42.13" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
       </measure>
-    <measure number="76" width="210.24">
-      <note default-x="12.5" default-y="-25">
+    <measure number="76">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4990,14 +4942,14 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
-        <lyric number="1" default-y="-42.13" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>던</text>
           </lyric>
         </note>
-      <note default-x="97.15" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5007,7 +4959,7 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="163.93" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5016,14 +4968,15 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
-        <lyric number="1" default-y="-42.13" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>봄</text>
           </lyric>
         </note>
       </measure>
-    <measure number="77" width="309.41">
-      <note default-x="58.1" default-y="-40">
+    <measure number="77">
+      <print new-system="yes"/>
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5033,12 +4986,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="99.69" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5048,12 +5001,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="141.27" default-y="-50">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -5063,12 +5016,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>고</text>
           </lyric>
         </note>
-      <note default-x="182.86" default-y="-50">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -5078,12 +5031,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>있</text>
           </lyric>
         </note>
-      <note default-x="224.44" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5094,7 +5047,7 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="266.03" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5104,14 +5057,14 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>데</text>
           </lyric>
         </note>
       </measure>
-    <measure number="78" width="261.08">
-      <note default-x="12.5" default-y="-25">
+    <measure number="78">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5121,12 +5074,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="54.08" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5134,15 +5087,15 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="72.09" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
-      <note default-x="106.8" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5153,12 +5106,12 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         <beam number="2">backward hook</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="134.52" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5168,12 +5121,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>를</text>
           </lyric>
         </note>
-      <note default-x="176.11" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5183,12 +5136,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>떠</text>
           </lyric>
         </note>
-      <note default-x="217.69" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5198,14 +5151,14 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
       </measure>
-    <measure number="79" width="243.02">
-      <note default-x="12.5" default-y="-40">
+    <measure number="79">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5214,18 +5167,18 @@
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="74.88" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="116.46" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5235,12 +5188,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>긴</text>
           </lyric>
         </note>
-      <note default-x="158.05" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5250,12 +5203,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>긴</text>
           </lyric>
         </note>
-      <note default-x="199.63" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5265,14 +5218,14 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>겨</text>
           </lyric>
         </note>
       </measure>
-    <measure number="80" width="215.4">
-      <note default-x="12.5" default-y="-25">
+    <measure number="80">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5280,14 +5233,14 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>울</text>
           </lyric>
         </note>
-      <note default-x="91.57" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5295,11 +5248,11 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="109.58" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="144.29" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5310,12 +5263,12 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         <beam number="2">forward hook</beam>
-        <lyric number="1" default-y="-52.01" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="172.01" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5327,14 +5280,15 @@
         <beam number="1">end</beam>
         </note>
       </measure>
-    <measure number="81" width="324.4">
-      <note default-x="58.1" default-y="-20">
+    <measure number="81">
+      <print new-system="yes"/>
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="97.78" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5345,12 +5299,12 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>모</text>
           </lyric>
         </note>
-      <note default-x="124.23" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5361,12 +5315,12 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>두</text>
           </lyric>
         </note>
-      <note default-x="150.68" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5378,7 +5332,7 @@
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
         </note>
-      <note default-x="177.13" default-y="-50">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -5389,12 +5343,12 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>지</text>
           </lyric>
         </note>
-      <note default-x="203.58" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5404,12 +5358,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>났</text>
           </lyric>
         </note>
-      <note default-x="243.25" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5419,12 +5373,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>는</text>
           </lyric>
         </note>
-      <note default-x="282.93" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5434,20 +5388,20 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>데</text>
           </lyric>
         </note>
       </measure>
-    <measure number="82" width="306.8">
-      <note default-x="12.5" default-y="-20">
+    <measure number="82">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="52.18" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5458,12 +5412,12 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>왜</text>
           </lyric>
         </note>
-      <note default-x="78.63" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5474,12 +5428,12 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="105.08" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5491,7 +5445,7 @@
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
         </note>
-      <note default-x="131.53" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5502,18 +5456,18 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>를</text>
           </lyric>
         </note>
-      <note default-x="157.98" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="197.65" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5524,12 +5478,12 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>떠</text>
           </lyric>
         </note>
-      <note default-x="224.1" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5540,12 +5494,12 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="250.55" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5557,7 +5511,7 @@
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
         </note>
-      <note default-x="277" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5568,14 +5522,14 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>가</text>
           </lyric>
         </note>
       </measure>
-    <measure number="83" width="208.77">
-      <note default-x="12.5" default-y="-25">
+    <measure number="83">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5583,14 +5537,14 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>up</stem>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="87.94" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5600,12 +5554,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>기</text>
           </lyric>
         </note>
-      <note default-x="87.94" default-y="-5">
+      <note>
         <chord/>
         <pitch>
           <step>E</step>
@@ -5616,7 +5570,7 @@
         <type>eighth</type>
         <stem>down</stem>
         </note>
-      <note default-x="127.62" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5626,12 +5580,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>다</text>
           </lyric>
         </note>
-      <note default-x="127.62" default-y="5">
+      <note>
         <chord/>
         <pitch>
           <step>G</step>
@@ -5642,7 +5596,7 @@
         <type>eighth</type>
         <stem>down</stem>
         </note>
-      <note default-x="167.29" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5652,12 +5606,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
-      <note default-x="167.29" default-y="10">
+      <note>
         <chord/>
         <pitch>
           <step>A</step>
@@ -5669,8 +5623,8 @@
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="84" width="188.93">
-      <note default-x="12.5" default-y="-25">
+    <measure number="84">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5678,14 +5632,14 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-25"/>
+        <dot/>
         <stem>down</stem>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>던</text>
           </lyric>
         </note>
-      <note default-x="12.5" default-y="10">
+      <note>
         <chord/>
         <pitch>
           <step>A</step>
@@ -5694,10 +5648,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="15"/>
+        <dot/>
         <stem>down</stem>
         </note>
-      <note default-x="87.94" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5707,7 +5661,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="87.94" default-y="10">
+      <note>
         <chord/>
         <pitch>
           <step>A</step>
@@ -5718,7 +5672,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="147.46" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5727,12 +5681,12 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-64.31" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>봄</text>
           </lyric>
         </note>
-      <note default-x="147.46" default-y="5">
+      <note>
         <chord/>
         <pitch>
           <step>G</step>
@@ -5744,8 +5698,9 @@
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="85" width="310.51">
-      <note default-x="58.1" default-y="-40">
+    <measure number="85">
+      <print new-page="yes" page-number="3"/>
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5755,12 +5710,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="58.1" default-y="-5">
+      <note>
         <chord/>
         <pitch>
           <step>E</step>
@@ -5771,7 +5726,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="99.87" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5781,12 +5736,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="99.87" default-y="-10">
+      <note>
         <chord/>
         <pitch>
           <step>D</step>
@@ -5797,7 +5752,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="141.64" default-y="-50">
+      <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -5807,12 +5762,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>고</text>
           </lyric>
         </note>
-      <note default-x="141.64" default-y="-15">
+      <note>
         <chord/>
         <pitch>
           <step>C</step>
@@ -5823,7 +5778,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="183.4" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5833,12 +5788,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>있</text>
           </lyric>
         </note>
-      <note default-x="183.4" default-y="-10">
+      <note>
         <chord/>
         <pitch>
           <step>D</step>
@@ -5849,7 +5804,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="225.17" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5860,7 +5815,7 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <note default-x="225.17" default-y="-5">
+      <note>
         <chord/>
         <pitch>
           <step>E</step>
@@ -5871,7 +5826,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="266.94" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5881,12 +5836,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>데</text>
           </lyric>
         </note>
-      <note default-x="266.94" default-y="5">
+      <note>
         <chord/>
         <pitch>
           <step>G</step>
@@ -5898,8 +5853,8 @@
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="86" width="262.16">
-      <note default-x="12.5" default-y="-25">
+    <measure number="86">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -5909,12 +5864,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>이</text>
           </lyric>
         </note>
-      <note default-x="12.5" default-y="10">
+      <note>
         <chord/>
         <pitch>
           <step>A</step>
@@ -5925,7 +5880,7 @@
         <type>eighth</type>
         <stem>down</stem>
         </note>
-      <note default-x="54.27" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -5933,15 +5888,15 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="72.27" default-y="-25"/>
+        <dot/>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>리</text>
           </lyric>
         </note>
-      <note default-x="54.27" default-y="5">
+      <note>
         <chord/>
         <pitch>
           <step>G</step>
@@ -5950,10 +5905,10 @@
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot default-x="72.27" default-y="5"/>
+        <dot/>
         <stem>down</stem>
         </note>
-      <note default-x="107.21" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -5964,12 +5919,12 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">backward hook</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="107.21" default-y="-5">
+      <note>
         <chord/>
         <pitch>
           <step>E</step>
@@ -5980,7 +5935,7 @@
         <type>16th</type>
         <stem>down</stem>
         </note>
-      <note default-x="135.06" default-y="-45">
+      <note>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -5990,12 +5945,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>를</text>
           </lyric>
         </note>
-      <note default-x="135.06" default-y="-10">
+      <note>
         <chord/>
         <pitch>
           <step>D</step>
@@ -6006,7 +5961,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="176.83" default-y="-40">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -6016,12 +5971,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>떠</text>
           </lyric>
         </note>
-      <note default-x="176.83" default-y="-5">
+      <note>
         <chord/>
         <pitch>
           <step>E</step>
@@ -6032,7 +5987,7 @@
         <type>eighth</type>
         <stem>up</stem>
         </note>
-      <note default-x="218.59" default-y="-30">
+      <note>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -6042,12 +5997,12 @@
         <type>eighth</type>
         <stem>up</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="218.59" default-y="5">
+      <note>
         <chord/>
         <pitch>
           <step>G</step>
@@ -6059,8 +6014,8 @@
         <stem>up</stem>
         </note>
       </measure>
-    <measure number="87" width="258.1">
-      <note default-x="12.5" default-y="-40">
+    <measure number="87">
+      <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -6069,12 +6024,12 @@
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="12.5" default-y="-5">
+      <note>
         <chord/>
         <pitch>
           <step>E</step>
@@ -6085,13 +6040,13 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="75.15" default-y="-20">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="116.92" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -6101,12 +6056,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>긴</text>
           </lyric>
         </note>
-      <note default-x="158.69" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -6116,12 +6071,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>긴</text>
           </lyric>
         </note>
-      <note default-x="200.45" default-y="10">
+      <note>
         <pitch>
           <step>A</step>
           <octave>5</octave>
@@ -6132,12 +6087,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>겨</text>
           </lyric>
         </note>
-      <note default-x="228.3" default-y="20">
+      <note>
         <pitch>
           <step>C</step>
           <octave>6</octave>
@@ -6150,8 +6105,8 @@
         <beam number="2">end</beam>
         </note>
       </measure>
-    <measure number="88" width="198.14">
-      <note default-x="12.5" default-y="20">
+    <measure number="88">
+      <note>
         <pitch>
           <step>C</step>
           <octave>6</octave>
@@ -6159,14 +6114,14 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="25"/>
+        <dot/>
         <stem>down</stem>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>울</text>
           </lyric>
         </note>
-      <note default-x="91.92" default-y="20">
+      <note>
         <pitch>
           <step>C</step>
           <octave>6</octave>
@@ -6176,7 +6131,7 @@
         <type>quarter</type>
         <stem>down</stem>
         </note>
-      <note default-x="154.57" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -6185,20 +6140,21 @@
         <voice>1</voice>
         <type>eighth</type>
         <stem>down</stem>
-        <lyric number="1" default-y="-69.27" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>이</text>
           </lyric>
         </note>
       </measure>
-    <measure number="89" width="339.39">
-      <note default-x="58.1" default-y="-20">
+    <measure number="89">
+      <print new-system="yes"/>
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="100.03" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -6209,12 +6165,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>모</text>
           </lyric>
         </note>
-      <note default-x="127.97" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -6225,12 +6181,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>두</text>
           </lyric>
         </note>
-      <note default-x="155.92" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -6242,7 +6198,7 @@
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
         </note>
-      <note default-x="183.87" default-y="-15">
+      <note>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -6253,12 +6209,12 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>지</text>
           </lyric>
         </note>
-      <note default-x="211.82" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -6268,12 +6224,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">begin</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>났</text>
           </lyric>
         </note>
-      <note default-x="253.74" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -6283,12 +6239,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>는</text>
           </lyric>
         </note>
-      <note default-x="295.67" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -6298,20 +6254,20 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>데</text>
           </lyric>
         </note>
       </measure>
-    <measure number="90" width="247.73">
-      <note default-x="12.5" default-y="-20">
+    <measure number="90">
+      <note>
         <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         </note>
-      <note default-x="54.42" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -6322,12 +6278,12 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>왜</text>
           </lyric>
         </note>
-      <note default-x="82.37" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -6338,12 +6294,12 @@
         <stem>down</stem>
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>begin</syllabic>
           <text>나</text>
           </lyric>
         </note>
-      <note default-x="110.32" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -6355,7 +6311,7 @@
         <beam number="1">continue</beam>
         <beam number="2">continue</beam>
         </note>
-      <note default-x="138.27" default-y="5">
+      <note>
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -6366,12 +6322,12 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>를</text>
           </lyric>
         </note>
-      <note default-x="166.22" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -6379,12 +6335,12 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="184.22" default-y="-5"/>
+        <dot/>
         <stem>down</stem>
         </note>
       </measure>
-    <measure number="91" width="219.78">
-      <note default-x="12.5" default-y="-10">
+    <measure number="91">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -6392,10 +6348,10 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="30.5" default-y="-5"/>
+        <dot/>
         <stem>down</stem>
         </note>
-      <note default-x="92.22" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -6406,7 +6362,7 @@
         <stem>down</stem>
         <beam number="1">begin</beam>
         </note>
-      <note default-x="134.14" default-y="-10">
+      <note>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -6416,12 +6372,12 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">continue</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>떠</text>
           </lyric>
         </note>
-      <note default-x="176.06" default-y="-5">
+      <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -6431,14 +6387,14 @@
         <type>eighth</type>
         <stem>down</stem>
         <beam number="1">end</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>나</text>
           </lyric>
         </note>
       </measure>
-    <measure number="92" width="222">
-      <note default-x="12.5" default-y="-25">
+    <measure number="92">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -6449,12 +6405,12 @@
         <stem>up</stem>
         <beam number="1">begin</beam>
         <beam number="2">begin</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>end</syllabic>
           <text>가</text>
           </lyric>
         </note>
-      <note default-x="40.45" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -6465,12 +6421,12 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         <beam number="2">end</beam>
-        <lyric number="1" default-y="-46.8" relative-y="-30">
+        <lyric number="1">
           <syllabic>single</syllabic>
           <text>오</text>
           </lyric>
         </note>
-      <note default-x="68.4" default-y="-25">
+      <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -6480,12 +6436,12 @@
         <type>quarter</type>
         <stem>up</stem>
         </note>
-      <note default-x="131.28" default-y="-20">
+      <note>
         <rest/>
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot default-x="145.68" default-y="-15"/>
+        <dot/>
         </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
