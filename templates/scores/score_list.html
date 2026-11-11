@@ -1,4 +1,7 @@
-{% extends "base.html" %}{% load interface %}{% block content %}{% tr "작곡가 미상" as unknown_composer %}
+{% extends "base.html" %}{% load interface %}{% load static %}
+{% block head %}<link rel="stylesheet" href="{% static 'scores/logout.css' %}?v=1">{% endblock %}
+{% block header_actions %}{% if request.session.score_google_id %}<form method="post" action="{% url 'google-logout' %}" class="logout-form">{% csrf_token %}<button type="submit" class="logout-button"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4H4v16h5M9 12h12m-4-4 4 4-4 4"/></svg>{% tr "로그아웃" %}</button></form>{% endif %}{% endblock %}
+{% block content %}{% tr "작곡가 미상" as unknown_composer %}
 <section class="hero"><div><p class="eyebrow">MY SCORES</p><h1>{% tr "태화니 악보 리스트" %}</h1><p>{% tr "MusicXML로 구성된 악보." %}</p></div>
 {% if request.can_manage_scores %}<form method="post" enctype="multipart/form-data" class="upload-card">{% csrf_token %}<label for="{{ form.musicxml_file.id_for_label }}">{% tr "MusicXML 업로드" %}</label>{{ form.musicxml_file }}
 {% for error in form.musicxml_file.errors %}<p class="error">{{ error }}</p>{% endfor %}<button class="button primary" type="submit">{% tr "악보 등록" %}</button><small>{% tr ".xml, .musicxml · 최대 10MB" %}</small></form>{% endif %}</section>

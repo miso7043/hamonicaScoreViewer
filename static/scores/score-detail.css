@@ -1,0 +1,39 @@
+/* Keep score identity in the navigation bar and management beside the instrument. */
+.score-toolbar.viewer-toolbar{display:grid;grid-template-columns:minmax(130px,1fr) minmax(0,auto) minmax(130px,1fr);align-items:center;gap:16px}
+.score-toolbar .control-group{justify-self:start;white-space:nowrap}
+.score-toolbar .score-identity{display:flex;align-items:baseline;justify-content:center;gap:16px;min-width:0;overflow:hidden}
+.score-identity h1{margin:0;min-width:0;font-size:19px;font-weight:750;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.score-identity .score-credit{min-width:0;color:#d4e4de;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.score-toolbar .score-home{justify-self:end}
+.score-icon-button{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;padding:0;border:1px solid #ffffff33;border-radius:9px;background:#ffffff0d;color:#fff;text-decoration:none}
+.score-icon-button:hover{background:#ffffff24}
+.score-icon-button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}
+.score-icon-button-danger:hover{color:#ffaaaa;border-color:#ffaaaa88}
+.score-dock-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-left:auto}
+body:not(.mobile-layout) .score-dock-actions{grid-column:3;grid-row:1;justify-self:end}
+@media(max-width:760px){
+ .score-toolbar.viewer-toolbar{grid-template-columns:auto minmax(0,1fr) auto;gap:8px;padding:8px}
+ .score-toolbar .control-group{gap:4px;font-size:13px}
+ .score-toolbar .control-group button{min-width:32px;padding:7px}
+ .score-toolbar .score-identity{gap:8px}
+ .score-identity h1{font-size:16px}
+ .score-identity .score-credit{font-size:12px}
+ body:not(.mobile-layout) .playback-toolbar:has(.score-dock-actions),.mobile-layout .playback-toolbar:has(.score-dock-actions){display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px}
+ body:not(.mobile-layout) .playback-toolbar:has(.score-dock-actions) .playback-controls,.mobile-layout .playback-toolbar:has(.score-dock-actions) .playback-controls{grid-column:1 / -1;grid-row:1;justify-content:center}
+ body:not(.mobile-layout) .playback-toolbar:has(.score-dock-actions) .harmonica,.mobile-layout .playback-toolbar:has(.score-dock-actions) .harmonica{grid-column:1;grid-row:2;min-width:0;width:100%}
+ body:not(.mobile-layout) .score-dock-actions,.mobile-layout .score-dock-actions{grid-column:2;grid-row:2}
+ body:not(.mobile-layout) .playback-toolbar:has(.score-dock-actions) [data-player-status],.mobile-layout .playback-toolbar:has(.score-dock-actions) [data-player-status]{grid-column:1 / -1;grid-row:3}
+}
+/* Mobile puts the title above navigation and omits the credit. */
+.mobile-layout .score-toolbar.viewer-toolbar{grid-template-columns:1fr auto 1fr;gap:6px 8px}
+.mobile-layout .score-toolbar .score-identity{grid-column:1 / -1;grid-row:1;justify-self:center;max-width:100%}
+.mobile-layout .score-toolbar .score-credit{display:none}
+.mobile-layout .score-toolbar .control-group{grid-column:1;grid-row:2}
+.mobile-layout .score-toolbar .score-home{grid-column:3;grid-row:2}
+@media(max-width:760px){
+ .score-toolbar.viewer-toolbar{grid-template-columns:1fr auto 1fr;gap:6px 8px}
+ .score-toolbar .score-identity{grid-column:1 / -1;grid-row:1;justify-self:center;max-width:100%}
+ .score-toolbar .score-credit{display:none}
+ .score-toolbar .control-group{grid-column:1;grid-row:2}
+ .score-toolbar .score-home{grid-column:3;grid-row:2}
+}

@@ -1,0 +1,5 @@
+.site-header{justify-content:space-between;gap:16px}
+.logout-form{margin:0;flex-shrink:0}
+.logout-button{gap:8px;min-height:44px;padding:8px 12px;border:1px solid #ffffff55;background:transparent;color:#fff;font-size:14px;white-space:nowrap}
+.logout-button:hover{background:#ffffff18}
+.logout-button:focus-visible{outline:3px solid #ffd166;outline-offset:3px}

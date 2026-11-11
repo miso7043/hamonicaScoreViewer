@@ -2,7 +2,8 @@
 from html import unescape
 from django.utils.translation import get_language
 
-TRANSLATIONS = {"'%(title)s' 악보를 등록했습니다.": "Score '%(title)s' added.",
+TRANSLATIONS = {"로그아웃": "Log out",
+ "'%(title)s' 악보를 등록했습니다.": "Score '%(title)s' added.",
  "'%(title)s' 악보를 삭제했습니다.": "Score '%(title)s' deleted.",
  '.xml 또는 .musicxml 파일을 선택해 주세요.': 'Choose an .xml or .musicxml file.',
  '.xml, .musicxml · 최대 10MB': '.xml, .musicxml · Up to 10MB',

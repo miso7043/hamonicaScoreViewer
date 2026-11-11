@@ -173,3 +173,44 @@ class BrowserLanguageTests(TestCase):
             "musicxml_file": SimpleUploadedFile("bad.txt", b"bad")
         }, HTTP_ACCEPT_LANGUAGE="de")
         self.assertContains(response, "Choose an .xml or .musicxml file.")
+
+
+@override_settings(GOOGLE_AUTH_ENABLED=True, ALLOWED_GOOGLE_ID="owner")
+class GoogleLogoutTests(TestCase):
+    def setUp(self):
+        session = self.client.session
+        session["score_google_id"] = "viewer"
+        session["score_google_email"] = "viewer@gmail.com"
+        session.save()
+
+    def test_logout_button_on_desktop_and_mobile_home(self):
+        for route in ("scores:list", "scores:mobile-list"):
+            response = self.client.get(reverse(route), HTTP_ACCEPT_LANGUAGE="ko")
+            self.assertContains(response, 'action="' + reverse("google-logout") + '"')
+            self.assertContains(response, "로그아웃")
+            self.assertContains(response, 'name="csrfmiddlewaretoken"')
+
+    def test_logout_clears_session_and_protects_scores(self):
+        response = self.client.post(reverse("google-logout"))
+        self.assertRedirects(response, reverse("google-login"), fetch_redirect_response=False)
+        self.assertNotIn("score_google_id", self.client.session)
+        self.assertNotIn("score_google_email", self.client.session)
+        self.assertEqual(response.headers["Cache-Control"].split(",")[0], "no-store")
+        self.assertRedirects(self.client.get(reverse("scores:list")), reverse("google-login"), fetch_redirect_response=False)
+
+    def test_logout_requires_post_and_csrf(self):
+        from django.test import Client
+        self.assertEqual(self.client.get(reverse("google-logout")).status_code, 405)
+        self.assertEqual(self.client.session["score_google_id"], "viewer")
+        protected = Client(enforce_csrf_checks=True)
+        protected.cookies = self.client.cookies.copy()
+        self.assertEqual(protected.post(reverse("google-logout")).status_code, 403)
+        protected.get(reverse("scores:list"))
+        token = protected.cookies["csrftoken"].value
+        response = protected.post(reverse("google-logout"), {"csrfmiddlewaretoken": token})
+        self.assertEqual(response.status_code, 302)
+        self.assertNotIn("score_google_id", protected.session)
+
+    def test_repeated_logout_is_safe(self):
+        self.client.post(reverse("google-logout"))
+        self.assertRedirects(self.client.post(reverse("google-logout")), reverse("google-login"), fetch_redirect_response=False)

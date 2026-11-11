@@ -8,6 +8,7 @@ from django.http import HttpResponseForbidden
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.decorators.cache import never_cache
+from django.views.decorators.http import require_POST
 
 
 def google_client():
@@ -51,12 +52,19 @@ def callback(request):
     return redirect(target)
 
 
+@never_cache
+@require_POST
+def logout(request):
+    request.session.flush()
+    return redirect("google-login" if settings.GOOGLE_AUTH_ENABLED else "scores:list")
+
+
 class GoogleLoginRequiredMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
-        public = ("/auth/google/", "/auth/google/callback")
+        public = ("/auth/google/", "/auth/google/callback", "/auth/logout/")
         if settings.GOOGLE_AUTH_ENABLED and request.path_info not in public:
             identity = request.session.get("score_google_id", "")
             if not isinstance(identity, str) or not identity:
