@@ -1,65 +1,37 @@
+const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko : en;
 (() => {
+  const t = playerTranslate;
   const viewer = document.getElementById("score-viewer");
   if (!viewer) return;
   const playButton = viewer.querySelector('[data-player-action="play"]');
   const status = viewer.querySelector("[data-player-status]");
-  // Real VCSL recordings; MIDI mapping and sustain loops are documented in samples.json.
+  // Samples are ordered by hole. For duplicate pitches, prefer the earlier hole.
   const samples = [
-  [
-    60,
-    "vcsl/Hohner-Special20_Normal_C3_play.wav",
-    1.04,
-    3.0
-  ],
-  [
-    64,
-    "vcsl/Hohner-Special20_Normal_E3_play.wav",
-    1.04,
-    3.0
-  ],
-  [
-    72,
-    "vcsl/Hohner-Special20_Normal_C4_play.wav",
-    1.04,
-    3.0
-  ],
-  [
-    76,
-    "vcsl/Hohner-Special20_Normal_E4_play.wav",
-    1.04,
-    3.0
-  ],
-  [
-    79,
-    "vcsl/Hohner-Special20_Normal_G4_play.wav",
-    1.04,
-    3.0
-  ],
-  [
-    84,
-    "vcsl/Hohner-Special20_Normal_C5_play.wav",
-    1.04,
-    3.0
-  ],
-  [
-    88,
-    "vcsl/Hohner-Special20_Normal_E5_play.wav",
-    1.04,
-    3.0
-  ],
-  [
-    91,
-    "vcsl/Hohner-Special20_Normal_G5_play.wav",
-    1.04,
-    3.0
-  ],
-  [
-    96,
-    "vcsl/Hohner-Special20_Normal_C6_play.wav",
-    1.04,
-    3.0
-  ]
-];
+    [60, "01_hole01_blow_C4.m4a"],
+    [62, "02_hole01_draw_D4.m4a"],
+    [64, "03_hole02_blow_E4.m4a"],
+    [67, "04_hole02_draw_G4.m4a"],
+    [67, "05_hole03_blow_G4.m4a"],
+    [71, "06_hole03_draw_B4.m4a"],
+    [72, "07_hole04_blow_C5.m4a"],
+    [74, "08_hole04_draw_D5.m4a"],
+    [76, "09_hole05_blow_E5.m4a"],
+    [77, "10_hole05_draw_F5.m4a"],
+    [79, "11_hole06_blow_G5.m4a"],
+    [81, "12_hole06_draw_A5.m4a"],
+    [84, "13_hole07_blow_C6.m4a"],
+    [83, "14_hole07_draw_B5.m4a"],
+    [88, "15_hole08_blow_E6.m4a"],
+    [86, "16_hole08_draw_D6.m4a"],
+    [91, "17_hole09_blow_G6.m4a"],
+    [89, "18_hole09_draw_F6.m4a"],
+    [96, "19_hole10_blow_C7.m4a"],
+    [93, "20_hole10_draw_A6.m4a"],
+    [100, "21_hole11_blow_E7.m4a"],
+    [95, "22_hole11_draw_B6.m4a"],
+    [103, "23_hole12_blow_G7.m4a"],
+    [98, "24_hole12_draw_D7.m4a"],
+  ];
   const semitones = {C:0,D:2,E:4,F:5,G:7,A:9,B:11};
   let context, events=[], audioEvents=[], duration=0, offset=0, playRequest=0, timer, animationFrame, audioStartedAt=0, playing=false, activeSources=[];
   const buffers = new Map();
@@ -92,7 +64,7 @@
     const passes=new Map(), order=[];
     let index=0, steps=0;
     while(index<measures.length) {
-      if(++steps>100000) throw new Error("도돌이표 반복 횟수가 너무 많습니다.");
+      if(++steps>100000) throw new Error(t("도돌이표 반복 횟수가 너무 많습니다.", "Too many repeat iterations."));
       const ending=endings.find(ending=>ending.start<=index && index<=ending.end);
       const pass=ending?.region ? (passes.get(ending.region)||1) : 1;
       if(!ending || ending.numbers.includes(pass)) order.push(index);
@@ -127,7 +99,7 @@
   }
   function parseMusicXML(xml) {
     const doc=new DOMParser().parseFromString(xml,"application/xml");
-    if(doc.querySelector("parsererror")) throw new Error("MusicXML 문법 오류");
+    if(doc.querySelector("parsererror")) throw new Error(t("MusicXML 문법 오류", "Invalid MusicXML syntax"));
     const root=doc.documentElement;
     let measures=[];
     if(root.localName==="score-partwise") measures=children(children(root,"part")[0]||root,"measure");
@@ -180,47 +152,49 @@
   }
   async function loadBuffer(sample) {
     if(buffers.has(sample[1])) return buffers.get(sample[1]);
-    const promise=fetch(viewer.dataset.soundBase+sample[1]).then(response=>{if(!response.ok) throw new Error("음원 로드 실패"); return response.arrayBuffer();}).then(data=>context.decodeAudioData(data)).then(buffer=>{buffers.set(sample[1],buffer); return buffer;}).catch(error=>{buffers.delete(sample[1]); throw error;});
+    const promise=fetch(viewer.dataset.soundBase+sample[1]).then(response=>{if(!response.ok) throw new Error(t("음원 로드 실패", "Failed to load audio sample")); return response.arrayBuffer();}).then(data=>context.decodeAudioData(data)).then(buffer=>{buffers.set(sample[1],buffer); return buffer;}).catch(error=>{buffers.delete(sample[1]); throw error;});
     buffers.set(sample[1],promise); return promise;
   }
   function cancelSources() { activeSources.forEach(source=>{try{source.stop();}catch(_){}}); activeSources=[]; clearInterval(timer); cancelAnimationFrame(animationFrame); highlight([]); }
-  function highlight(ids) { viewer.dispatchEvent(new CustomEvent("scoreplayhead", {detail:{ids}})); }
+  function highlight(ids, midis = []) { viewer.dispatchEvent(new CustomEvent("scoreplayhead", {detail:{ids, midis}})); }
   function playbackOffset() { return Math.min(duration, Math.max(0, context.currentTime-audioStartedAt)); }
   function animatePlayhead() {
     if (!playing) return;
     const position=playbackOffset();
-    highlight(events.filter(note=>note.start<=position && position<note.start+note.duration).map(note=>note.id));
+    const currentNotes = events.filter(note=>note.start<=position && position<note.start+note.duration);
+    highlight(currentNotes.map(note=>note.id), currentNotes.map(note=>note.midi));
     animationFrame=requestAnimationFrame(animatePlayhead);
   }
-  function updateStatus() { status.textContent=events.length?`${formatTime(offset)} / ${formatTime(duration)} · ${events.length}음`:`재생할 음표가 없습니다`; }
+  function updateStatus() { status.textContent=events.length?`${formatTime(offset)} / ${formatTime(duration)} · ${events.length}${t("음", " notes")}`:t("재생할 음표가 없습니다", "No notes to play"); }
   async function play(startOffset) {
     if(Number.isFinite(startOffset)) { playing=false; cancelSources(); offset=startOffset; }
-    if(playing) { playRequest++; offset=playbackOffset(); playing=false; cancelSources(); playButton.textContent="▶ 계속"; updateStatus(); return; }
+    if(playing) { playRequest++; offset=playbackOffset(); playing=false; cancelSources(); playButton.textContent=t("▶ 계속", "\u25b6 Resume"); updateStatus(); return; }
     if(!events.length) return;
     if(offset>=duration) offset=0;
     const request=++playRequest;
     context ||= new (window.AudioContext||window.webkitAudioContext)(); await context.resume();
     if(request!==playRequest) return;
-    playButton.disabled=true; status.textContent="하모니카 음원을 불러오는 중…";
+    playButton.disabled=true; status.textContent=t("하모니카 음원을 불러오는 중…", "Loading harmonica samples\u2026");
     try {
       const needed=[...new Set(audioEvents.filter(note=>note.start+note.duration>offset).map(note=>nearestSample(note.midi)[1]))];
       await Promise.all(needed.map(name=>loadBuffer(samples.find(sample=>sample[1]===name))));
       if(request!==playRequest) return;
     } catch(error) { if(request!==playRequest) return; status.textContent=error.message; playButton.disabled=false; return; }
-    playButton.disabled=false; playing=true; playButton.textContent="Ⅱ 일시정지";
+    playButton.disabled=false; playing=true; playButton.textContent=t("Ⅱ 일시정지", "\u2161 Pause");
+    viewer.dispatchEvent(new CustomEvent("scoreplaybackstart"));
     const audioStart=context.currentTime+.05; audioStartedAt=audioStart-offset;
     for(const note of audioEvents) {
       if(note.start+note.duration<=offset || note.start>=duration) continue;
       const sample=nearestSample(note.midi), source=context.createBufferSource(), gain=context.createGain();
       const when=audioStart+Math.max(0,note.start-offset), remaining=note.start+note.duration-Math.max(offset,note.start), end=when+remaining;
-      source.buffer=buffers.get(sample[1]); source.playbackRate.value=2**((note.midi-sample[0])/12); source.loop=true; source.loopStart=sample[2]; source.loopEnd=sample[3];
+      source.buffer=buffers.get(sample[1]); source.playbackRate.value=2**((note.midi-sample[0])/12); source.loop=true; source.loopStart=1.04; source.loopEnd=Math.min(3, source.buffer.duration);
       gain.gain.setValueAtTime(0,when); gain.gain.linearRampToValueAtTime(.65,when+Math.min(.015,remaining/3)); gain.gain.setValueAtTime(.65,Math.max(when+Math.min(.015,remaining/3),end-Math.min(.06,remaining/3))); gain.gain.linearRampToValueAtTime(0,end);
       source.connect(gain).connect(context.destination); source.start(when); source.stop(end+.01); activeSources.push(source);
     }
     animatePlayhead();
-    timer=setInterval(()=>{ offset=playbackOffset(); updateStatus(); if(offset>=duration){ playing=false; cancelSources(); playButton.textContent="▶ 다시 재생"; } },100);
+    timer=setInterval(()=>{ offset=playbackOffset(); updateStatus(); if(offset>=duration){ playing=false; cancelSources(); playButton.textContent=t("▶ 다시 재생", "\u25b6 Replay"); } },100);
   }
-  function stop() { playRequest++; playButton.disabled=false; playing=false; cancelSources(); offset=0; playButton.textContent="▶ 재생"; updateStatus(); }
+  function stop() { playRequest++; playButton.disabled=false; playing=false; cancelSources(); offset=0; playButton.textContent=t("▶ 재생", "\u25b6 Play"); updateStatus(); }
   viewer.addEventListener("scorexmlchange",event=>{stop(); try{parseMusicXML(event.detail.xml);}catch(error){status.textContent=error.message;}});
   viewer.addEventListener("click", event => {
     const element=event.target.closest("[data-notation] .note");
