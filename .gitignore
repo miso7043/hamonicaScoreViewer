@@ -21,3 +21,7 @@ service-account*.json
 .aws/
 .codex/
 .agents/
+deployment-backups/
+musicXML/
+musicXML/*
+deploy/DUCKDNS.md

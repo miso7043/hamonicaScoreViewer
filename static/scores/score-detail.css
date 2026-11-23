@@ -37,3 +37,5 @@ body:not(.mobile-layout) .score-dock-actions{grid-column:3;grid-row:1;justify-se
  .score-toolbar .control-group{grid-column:1;grid-row:2}
  .score-toolbar .score-home{grid-column:3;grid-row:2}
 }
+
+.score-identity .score-visits{flex-shrink:0;color:#d4e4de;font-size:12px;white-space:nowrap}

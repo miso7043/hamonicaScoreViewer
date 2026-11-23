@@ -1,0 +1,10 @@
+[Unit]
+Description=Update DuckDNS every five minutes
+
+[Timer]
+OnStartupSec=30s
+OnUnitActiveSec=5min
+RandomizedDelaySec=15s
+
+[Install]
+WantedBy=timers.target

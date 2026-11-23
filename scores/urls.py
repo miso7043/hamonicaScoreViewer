@@ -3,6 +3,7 @@ from . import views
 
 app_name = "scores"
 urlpatterns = [
+    path("manage/", views.score_list, {"management": True}, name="manage"),
     path("m", views.score_list, {"mobile": True}, name="mobile-list"),
     path("m/", views.score_list, {"mobile": True}),
     path("m/scores/<int:pk>/", views.score_detail, {"mobile": True}, name="mobile-detail"),

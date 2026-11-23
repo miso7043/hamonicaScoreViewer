@@ -1,0 +1,16 @@
+[Unit]
+Description=Hamonica MusicXML player on Raspberry Pi
+After=network.target
+
+[Service]
+WorkingDirectory=%h/hamonica-player
+EnvironmentFile=%h/.config/hamonica-player.env
+ExecStart=%h/hamonica-player/.venv/bin/gunicorn config.wsgi:application --bind 0.0.0.0:8030 --workers 2 --timeout 60 --access-logfile -
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

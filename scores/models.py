@@ -6,6 +6,7 @@ class Score(models.Model):
     composer = models.CharField("작곡가", max_length=200, blank=True)
     original_filename = models.CharField("원본 파일명", max_length=255, blank=True)
     xml_content = models.TextField("MusicXML 원문")
+    visit_count = models.PositiveBigIntegerField("조회 수", default=0, editable=False)
     created_at = models.DateTimeField("등록일", auto_now_add=True)
     updated_at = models.DateTimeField("수정일", auto_now=True)
 
@@ -16,3 +17,9 @@ class Score(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class SiteVisit(models.Model):
+    """Persistent counter shared by desktop and mobile home pages."""
+
+    visit_count = models.PositiveBigIntegerField("방문 수", default=0)

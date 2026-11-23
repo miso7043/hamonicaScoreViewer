@@ -1,0 +1,11 @@
+[Unit]
+Description=Update rp-yoon.duckdns.org public IPv4 address
+ConditionPathExists=%h/.config/duckdns/config.json
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 %h/.local/bin/duckdns-update.py
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+TimeoutStartSec=45

@@ -75,12 +75,14 @@ class GoogleLoginRequiredMiddleware:
         if settings.GOOGLE_AUTH_ENABLED and not request.can_manage_scores and request.path_info.startswith("/admin/"):
             return HttpResponseForbidden(tr("악보 관리 권한이 없습니다."))
         response = self.get_response(request)
-        if settings.GOOGLE_AUTH_ENABLED:
+        if settings.GOOGLE_AUTH_ENABLED or getattr(settings, "PUBLIC_SCORE_VIEW", False):
             response["Cache-Control"] = "no-store"
         return response
 
 
 def can_manage_scores(request):
+    if getattr(settings, "PUBLIC_SCORE_VIEW", False):
+        return request.user.is_authenticated and request.user.is_active and request.user.is_staff
     if not settings.GOOGLE_AUTH_ENABLED:
         return True
     email = request.session.get("score_google_email")

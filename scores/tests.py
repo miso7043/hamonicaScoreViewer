@@ -214,3 +214,89 @@ class GoogleLogoutTests(TestCase):
     def test_repeated_logout_is_safe(self):
         self.client.post(reverse("google-logout"))
         self.assertRedirects(self.client.post(reverse("google-logout")), reverse("google-login"), fetch_redirect_response=False)
+
+
+@override_settings(GOOGLE_AUTH_ENABLED=False, PUBLIC_SCORE_VIEW=True)
+class PublicScoreTests(TestCase):
+    def setUp(self):
+        self.score = Score.objects.create(title="Public score", xml_content=XML)
+
+    def test_anonymous_visitors_can_read_but_cannot_modify(self):
+        for route in ("scores:list", "scores:mobile-list"):
+            response = self.client.get(reverse(route))
+            self.assertContains(response, self.score.title)
+            self.assertNotContains(response, 'class="upload-card"')
+            self.assertEqual(self.client.post(reverse(route), {}).status_code, 403)
+        for route in ("scores:detail", "scores:mobile-detail", "scores:musicxml"):
+            self.assertEqual(self.client.get(reverse(route, args=[self.score.pk])).status_code, 200)
+        for route in ("scores:edit", "scores:delete"):
+            url = reverse(route, args=[self.score.pk])
+            self.assertEqual(self.client.get(url).status_code, 403)
+            self.assertEqual(self.client.post(url, {}).status_code, 403)
+        self.assertEqual(self.client.get("/admin/").status_code, 302)
+        self.assertEqual(Score.objects.count(), 1)
+
+    def test_only_active_staff_can_manage(self):
+        from django.contrib.auth import get_user_model
+        user = get_user_model().objects.create_user(username="member")
+        self.client.force_login(user)
+        url = reverse("scores:edit", args=[self.score.pk])
+        self.assertEqual(self.client.get(url).status_code, 403)
+        user.is_staff = True
+        user.save()
+        self.assertEqual(self.client.get(url).status_code, 200)
+        response = self.client.post(url, {
+            "title": "Updated", "composer": "", "xml_content": XML})
+        self.assertEqual(response.status_code, 302)
+        self.score.refresh_from_db()
+        self.assertEqual(self.score.title, "Updated")
+
+    def test_upload_is_only_available_on_staff_management_screen(self):
+        from django.contrib.auth import get_user_model
+        url = reverse("scores:manage")
+        self.assertEqual(self.client.get(url).status_code, 403)
+        self.assertEqual(self.client.post(url, {}).status_code, 403)
+        user = get_user_model().objects.create_user(username="staff", is_staff=True)
+        self.client.force_login(user)
+        for route in ("scores:list", "scores:mobile-list"):
+            response = self.client.get(reverse(route))
+            self.assertNotContains(response, 'class="upload-card"')
+            self.assertEqual(response.headers["Cache-Control"], "no-store")
+            self.assertEqual(self.client.post(reverse(route), {}).status_code, 403)
+        self.assertContains(self.client.get(url), 'class="upload-card"')
+        response = self.client.post(url, {
+            "musicxml_file": SimpleUploadedFile("song.musicxml", XML.encode())})
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(Score.objects.count(), 2)
+
+
+class VisitCountTests(TestCase):
+    def setUp(self):
+        self.client.defaults["HTTP_ACCEPT_LANGUAGE"] = "ko"
+
+    def test_home_counts_desktop_and_mobile_visits(self):
+        from .models import SiteVisit
+        for count, url in enumerate(("/", "/m", "/m/", "/"), start=1):
+            response = self.client.get(url)
+            self.assertEqual(response.context["visit_count"], count)
+        self.client.head("/")
+        self.client.get(reverse("scores:manage"))
+        self.assertEqual(SiteVisit.objects.get(pk=1).visit_count, 4)
+
+    def test_score_counts_only_detail_gets_without_changing_order(self):
+        score = Score.objects.create(title="방문 테스트", xml_content=XML)
+        other = Score.objects.create(title="다른 악보", xml_content=XML)
+        updated_at = score.updated_at
+        for count, route in enumerate(("scores:detail", "scores:mobile-detail"), start=1):
+            response = self.client.get(reverse(route, args=[score.pk]))
+            self.assertEqual(response.context["score"].visit_count, count)
+            self.assertContains(response, f"조회 수: {count}")
+        self.client.head(reverse("scores:detail", args=[score.pk]))
+        self.client.get(reverse("scores:musicxml", args=[score.pk]))
+        response = self.client.get("/")
+        self.assertContains(response, "조회 수: 2")
+        score.refresh_from_db()
+        other.refresh_from_db()
+        self.assertEqual(score.visit_count, 2)
+        self.assertEqual(other.visit_count, 0)
+        self.assertEqual(score.updated_at, updated_at)
