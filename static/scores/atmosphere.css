@@ -1,0 +1,56 @@
+/* Crop the original image above its baked-in lower ribbons. */
+body{min-height:100vh;background:#090806;isolation:isolate}
+.gold-atmosphere{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;user-select:none;background:linear-gradient(#08070426,#08070480),url('images/awards-background.jpg') center top / 100% 145% no-repeat #090806}
+.gold-atmosphere svg,.gold-particles{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+.gold-atmosphere svg{fill:none;opacity:.65}
+/* Four composited layers retain crossings without repainting path geometry. */
+.gold-atmosphere .gold-ribbon{inset:-8%;width:116%;height:116%;transform-origin:center;will-change:transform;animation:gold-sway 19s ease-in-out infinite alternate}
+.gold-atmosphere .gold-ribbon-1{animation-name:gold-sway-reverse;animation-duration:23s;animation-delay:-11s}
+.gold-atmosphere .gold-ribbon-2{animation-duration:27s;animation-delay:-18s;animation-direction:alternate-reverse}
+.gold-atmosphere .gold-ribbon-3{animation-name:gold-sway-reverse;animation-duration:21s;animation-delay:-7s}
+@keyframes gold-sway{from{transform:translate3d(-3%,-5%,0) rotate(-5deg)}to{transform:translate3d(3%,5%,0) rotate(5deg)}}
+@keyframes gold-sway-reverse{from{transform:translate3d(4%,6%,0) rotate(6deg)}to{transform:translate3d(-4%,-6%,0) rotate(-6deg)}}
+/* Bright pinpoints stay visible through the translucent panels. */
+.gold-particles i{position:absolute;width:var(--size);height:var(--size);border-radius:50%;background:#fff2be;box-shadow:0 0 5px #ffd778b3;will-change:transform,opacity;opacity:0;animation:gold-rise var(--duration) linear var(--delay) infinite}
+@keyframes gold-rise{0%{opacity:0;transform:translate3d(0,25px,0) scale(.5)}12%{opacity:1}45%{opacity:.9}75%{opacity:.65}100%{opacity:0;transform:translate3d(var(--drift),calc(-1 * var(--rise)),0) scale(.3)}}
+.gold-atmosphere.is-paused *{animation-play-state:paused}
+/* Warm glass panels preserve contrast and reveal the moving gold backdrop. */
+.page-shell{color:#f3e8ce}
+.page-shell .hero p,.page-shell .detail-heading p{color:#d0c4aa}
+.page-shell .eyebrow,.page-shell>.back{color:#e6c777!important}
+.page-shell .section-heading{border-color:#d8b76055}
+.page-shell .empty{color:#dfd0b0;border-color:#d8b76066;background:#17120e99}
+body{--accent:#dfbc70;--accent-dark:#c59c4d;--line:#c8a85a40}
+.upload-card,.score-card,.editor-form,.viewer,.commission-contact,.message{color:#f5ecd9;background:linear-gradient(120deg,#211a128f,#0c0b097a);border-color:#d5b56b40;box-shadow:0 8px 30px #00000024,inset 0 1px #fff1cb0a}
+.score-card p,.score-card small,.upload-card small{color:#d2c5aa}
+.score-card:hover{background:#3a2c1999;border-color:#e6c47799}
+.score-detail-link:hover h3{color:#ffe0a0}
+.page-shell .subtle,.site-header .subtle{color:#f5e5c4;background:#d5b56b12;border-color:#d5b56b55}
+.page-shell .primary{color:#211708;background:linear-gradient(120deg,#eed599,#c29b4f)}
+.editor-form input,.editor-form textarea,.upload-card input{color:#f5ecd9;background:#08070588;border-color:#d5b56b55;color-scheme:dark}
+.editor-form input:focus,.editor-form textarea:focus{outline:2px solid #dfbc70;outline-offset:2px}
+.page-shell .error,.page-shell .errorlist{color:#ffb7a3!important}
+.page-shell .danger-text{color:#ffb7a3}
+.viewer .viewer-toolbar{background:#1e180fd9}
+.viewer .viewer-status{color:#e1d3b8}
+body .playback-toolbar{background:#17130fe8;border-color:#d5b56b40;color:#f5ecd9}
+.playback-toolbar .harmonica{color:#f5ecd9}
+/* Repeat paper down long scores; mobile shows the central half at native ratio. */
+.notation{background:#100d0966;scrollbar-color:#a88c53 #201a12}
+.notation svg{background:transparent;color:#241e15}
+.notation>svg{background:#dfd2b5 url('images/backsheet.webp') center top / 200% auto repeat-y;border:1px solid #b49a60;border-radius:3px;box-shadow:0 4px 16px #00000030}
+@media screen{body:not(.mobile-layout) .notation>svg{background-size:100% auto;background-position:center top}}
+@media print{.notation>svg{background:#fff;border:0;box-shadow:none}}
+
+.site-header{background:#100e0bd9;border-bottom:1px solid #d8b76040}
+@media(prefers-reduced-motion:reduce){.gold-atmosphere .gold-ribbon,.gold-particles i{animation:none;will-change:auto}.gold-particles i:nth-child(4n){opacity:.35}}
+
+/* Reserve rendering capacity for notation and audio while playing/preparing. */
+body.score-playback-active .gold-atmosphere *{animation-play-state:paused!important}
+body.score-playback-active .gold-atmosphere .gold-ribbon{will-change:auto}
+body.score-playback-active .notation .playing-note{animation:none;filter:none;color:#b87800}
+
+/* Musical symbols now drift across the viewport behind the main content. */
+.background-music{position:absolute;inset:0;overflow:hidden;pointer-events:none;user-select:none}
+.background-music-symbol{position:absolute;left:0;top:0;line-height:1;opacity:.3;font-family:"Noto Music","Segoe UI Symbol","DejaVu Sans",serif;transform-origin:center;will-change:transform}
+@media(prefers-reduced-motion:reduce){.background-music-symbol{will-change:auto}}

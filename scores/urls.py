@@ -11,5 +11,6 @@ urlpatterns = [
     path("scores/<int:pk>/", views.score_detail, name="detail"),
     path("scores/<int:pk>/edit/", views.score_edit, name="edit"),
     path("scores/<int:pk>/delete/", views.score_delete, name="delete"),
+    path("scores/<int:pk>/pdf/", views.score_pdf, name="pdf"),
     path("scores/<int:pk>/musicxml/", views.score_musicxml, name="musicxml"),
 ]

@@ -34,6 +34,7 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
   ];
   const semitones = {C:0,D:2,E:4,F:5,G:7,A:9,B:11};
   let context, events=[], audioEvents=[], duration=0, offset=0, playRequest=0, timer, animationFrame, audioStartedAt=0, playbackFrom=0, playing=false, activeSources=[];
+  let visualNotes=[], visualIndex=0, activeVisualNotes=[], lastVisualFrame=0, lastHighlightKey=null;
   const buffers = new Map(), downloads = new Map();
   const children = (node,name) => Array.from(node.children).filter(child => child.localName===name);
   const first = (node,name) => Array.from(node.getElementsByTagNameNS("*",name))[0];
@@ -148,7 +149,7 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
       }
       cursor=measureEnd;
     }
-    events=result; audioEvents=mergeTiedNotes(result); duration=Math.max(cursor,...result.map(note=>note.start+note.duration),0); offset=0; updateStatus();
+    events=result; visualNotes=[...result].sort((a,b)=>a.start-b.start); audioEvents=mergeTiedNotes(result); duration=Math.max(cursor,...result.map(note=>note.start+note.duration),0); offset=0; updateStatus();
   }
   function downloadSample(name) {
     if (!downloads.has(name)) {
@@ -191,30 +192,58 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
     buffers.set(name, pending);
     return pending;
   }
-  function cancelSources() { activeSources.forEach(source=>{try{source.stop();}catch(_){}}); activeSources=[]; clearInterval(timer); cancelAnimationFrame(animationFrame); highlight([]); }
-  function highlight(ids, midis = []) { viewer.dispatchEvent(new CustomEvent("scoreplayhead", {detail:{ids, midis}})); }
+  function setVisualPlayback(active) {
+    document.body?.classList.toggle("score-playback-active", active);
+    viewer.dispatchEvent(new CustomEvent("scoreplaybackstate", {detail:{playing:active}, bubbles:true}));
+  }
+  function cancelSources() { setVisualPlayback(false); activeSources.forEach(source=>{try{source.stop();}catch(_){}}); activeSources=[]; clearInterval(timer); cancelAnimationFrame(animationFrame); highlight([]); }
+  function highlight(ids, midis = []) {
+    const key=JSON.stringify([ids,midis]);
+    if(key===lastHighlightKey) return;
+    lastHighlightKey=key;
+    viewer.dispatchEvent(new CustomEvent("scoreplayhead", {detail:{ids, midis}}));
+  }
   function playbackOffset() { return Math.min(duration, Math.max(playbackFrom, context.currentTime-audioStartedAt)); }
-  function animatePlayhead() {
-    if (!playing) return;
-    if (context.currentTime < audioStartedAt + playbackFrom) {
-      highlight([]);
-      animationFrame=requestAnimationFrame(animatePlayhead);
-      return;
+  function resetVisualCursor(position) {
+    visualIndex=0; activeVisualNotes=[]; lastVisualFrame=0;
+    while(visualIndex<visualNotes.length && visualNotes[visualIndex].start<=position) {
+      const note=visualNotes[visualIndex++];
+      if(position<note.start+note.duration) activeVisualNotes.push(note);
     }
-    const position=playbackOffset();
-    const currentNotes = events.filter(note=>note.start<=position && position<note.start+note.duration);
-    highlight(currentNotes.map(note=>note.id), currentNotes.map(note=>note.midi));
+  }
+  function animatePlayhead(now) {
+    if (!playing) return;
+    // The audio clock stays independent. Update visuals at most 30 times/second,
+    // advancing a sorted cursor instead of scanning the entire score each frame.
     animationFrame=requestAnimationFrame(animatePlayhead);
+    if(Number.isFinite(now)) {
+      if(now-lastVisualFrame<33) return;
+      lastVisualFrame=now;
+    }
+    if(context.currentTime<audioStartedAt+playbackFrom) { highlight([]); return; }
+    const position=playbackOffset();
+    activeVisualNotes=activeVisualNotes.filter(note=>position<note.start+note.duration);
+    while(visualIndex<visualNotes.length && visualNotes[visualIndex].start<=position) {
+      const note=visualNotes[visualIndex++];
+      if(position<note.start+note.duration) activeVisualNotes.push(note);
+    }
+    highlight(activeVisualNotes.map(note=>note.id), activeVisualNotes.map(note=>note.midi));
+  }
+  function setPlayButton(label, icon) {
+    playButton.textContent=label;
+    playButton.setAttribute?.("aria-label",label);
+    playButton.setAttribute?.("data-playback-icon",icon);
   }
   function updateStatus() { status.textContent=events.length?`${formatTime(offset)} / ${formatTime(duration)} · ${events.length}${t("음", " notes")}`:t("재생할 음표가 없습니다", "No notes to play"); }
   async function play(startOffset) {
     if(Number.isFinite(startOffset)) { playing=false; cancelSources(); offset=startOffset; }
-    if(playing) { playRequest++; offset=playbackOffset(); playing=false; cancelSources(); playButton.textContent=t("▶ 계속", "\u25b6 Resume"); updateStatus(); return; }
+    if(playing) { playRequest++; offset=playbackOffset(); playing=false; cancelSources(); setPlayButton(t("▶ 계속", "\u25b6 Resume"), "▶"); updateStatus(); return; }
     if(!events.length) return;
     if(offset>=duration) offset=0;
     const request=++playRequest;
     playButton.disabled=true;
     status.textContent=t("악보 전체 음원을 준비하는 중…", "Preparing all score samples…");
+    setVisualPlayback(true);
     try {
       context ||= new (window.AudioContext||window.webkitAudioContext)();
       await context.resume();
@@ -231,10 +260,10 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
       if(context.state !== "running") throw new Error(t("오디오가 일시 중단되었습니다. 다시 재생해 주세요.", "Audio is suspended. Please try playing again."));
     } catch(error) {
       if(request!==playRequest) return;
-      status.textContent=error.message; playButton.disabled=false; return;
+      setVisualPlayback(false); status.textContent=error.message; playButton.disabled=false; return;
     }
     // Start the score clock only after the first and every following sample is decoded.
-    playButton.disabled=false; playing=true; playButton.textContent=t("Ⅱ 일시정지", "\u2161 Pause");
+    playButton.disabled=false; playing=true; setPlayButton(t("Ⅱ 일시정지", "\u2161 Pause"), "Ⅱ");
     viewer.dispatchEvent(new CustomEvent("scoreplaybackstart"));
     const playbackStartOffset=offset, audioStart=context.currentTime+0.5; audioStartedAt=audioStart-playbackStartOffset; playbackFrom=playbackStartOffset;
     // Keep decoded samples in memory, but create audio nodes only for the next second.
@@ -261,13 +290,14 @@ const playerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
       }
     }
     scheduleUpcomingNotes();
+    resetVisualCursor(playbackStartOffset);
     animatePlayhead();
     timer=setInterval(()=>{
       scheduleUpcomingNotes(); offset=playbackOffset(); updateStatus();
-      if(offset>=duration){ playing=false; cancelSources(); playButton.textContent=t("▶ 다시 재생", "\u25b6 Replay"); }
+      if(offset>=duration){ playing=false; cancelSources(); setPlayButton(t("▶ 다시 재생", "\u25b6 Replay"), "↻"); }
     },100);
   }
-  function stop() { playRequest++; playButton.disabled=false; playing=false; cancelSources(); offset=0; playButton.textContent=t("▶ 재생", "\u25b6 Play"); updateStatus(); }
+  function stop() { playRequest++; playButton.disabled=false; playing=false; cancelSources(); offset=0; setPlayButton(t("▶ 재생", "\u25b6 Play"), "▶"); updateStatus(); }
   viewer.addEventListener("scorexmlchange",event=>{stop(); try{parseMusicXML(event.detail.xml); void preloadSamples();}catch(error){status.textContent=error.message;}});
   viewer.addEventListener("click", event => {
     const element=event.target.closest("[data-notation] .note");

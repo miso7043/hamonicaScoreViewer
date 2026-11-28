@@ -11,10 +11,10 @@
     new ResizeObserver(updateDockHeight).observe(dock);
     updateDockHeight();
   }
-  // C-major 24-hole Asian tremolo tuning, from Suzuki's notation chart:
-  // https://www.suzuki-music.co.jp/app/uploads/000082_3.pdf
+  // Left-to-right pitches from musicXML/트레몰로 하모니카 기본음.musicxml.
+  // Preserve the score's octave numbers (G2 at hole 1, B5 at hole 24).
   // Each vertical pair of reeds sounds one pitch, rather than blow/draw rows.
-  const pitches = [55,62,60,65,64,69,67,71,72,74,76,77,79,81,84,83,88,86,91,89,96,93,100,95];
+  const pitches = [43,50,48,53,52,57,55,59,60,62,64,65,67,69,72,71,76,74,79,77,84,81,88,83];
   const namespace = "http://www.w3.org/2000/svg";
   const holes = pitches.map((midi, index) => {
     const group = document.createElementNS(namespace, "g");
@@ -28,22 +28,22 @@
       circle.setAttribute("cx", x); circle.setAttribute("cy", y); circle.setAttribute("r", 14.45);
       group.appendChild(circle);
     }
-    const label = document.createElementNS(namespace, "text");
-    label.setAttribute("x", x); label.setAttribute("y", 263);
-    label.textContent = index + 1;
-    overlay.appendChild(label);
     overlay.appendChild(group);
     return group;
   });
   let previous = "";
   viewer.addEventListener("scoreplayhead", event => {
-    const midis = [...new Set(event.detail.midis || [])].sort((a, b) => a - b);
+    const midis = [...new Set(event.detail.midis || [])].filter(Number.isFinite).sort((a, b) => a - b);
+    // Keep the final animation state while the same pitches continue.
     const key = midis.join(",");
     if (key === previous) return;
     previous = key;
+    // This C harmonica has no hole for accidentals or out-of-range pitches.
+    // Show the closest hole for those notes; audio keeps the original pitch.
+    const activeHoles = new Set(midis.map(midi => pitches.reduce((best, pitch, index) =>
+      Math.abs(pitch - midi) < Math.abs(pitches[best] - midi) ? index : best, 0)));
     holes.forEach((hole, index) => {
-      const active = midis.includes(pitches[index]);
-      hole.classList.toggle("is-playing", active);
+      hole.classList.toggle("is-playing", activeHoles.has(index));
     });
   });
 })();

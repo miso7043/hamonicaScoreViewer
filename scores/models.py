@@ -1,3 +1,5 @@
+from pathlib import Path
+from django.conf import settings
 from django.db import models
 
 
@@ -14,6 +16,17 @@ class Score(models.Model):
         ordering = ["-updated_at"]
         verbose_name = "악보"
         verbose_name_plural = "악보"
+
+    @property
+    def pdf_path(self):
+        filename = self.original_filename.replace("\\", "/").rsplit("/", 1)[-1]
+        if not filename:
+            return None
+        root = Path(settings.SCORE_PDF_DIR).resolve()
+        candidate = (root / (Path(filename).stem + ".pdf")).resolve()
+        if candidate.parent == root and candidate.is_file():
+            return candidate
+        return None
 
     def __str__(self):
         return self.title

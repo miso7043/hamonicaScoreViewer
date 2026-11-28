@@ -17,3 +17,11 @@ body:not(.mobile-layout) .viewer.desktop-playback-layout{display:flex;flex-direc
 body:not(.mobile-layout) .desktop-playback-layout .viewer-toolbar{position:static;flex:none}
 body:not(.mobile-layout) .desktop-playback-layout .viewer-status{flex:none}
 body:not(.mobile-layout) .desktop-playback-layout .notation{flex:1;min-height:0;max-height:none;overflow:auto;overscroll-behavior:contain}
+
+/* Keep the guide inside the instrument, above the mouthpiece holes. */
+.harmonica .harmonica-diagram{aspect-ratio:980/232;min-width:0}
+.harmonica-legend{position:absolute;inset:8% 0 auto;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:clamp(16px,5vw,36px);margin:0;color:#172b36;font:600 clamp(13px,3.38vw,18.2px)/1.3 system-ui,sans-serif;white-space:nowrap}
+.harmonica-legend span{display:flex;align-items:center;gap:6px}
+.breath-dot{display:inline-block;flex:none;width:14px;height:14px;border-radius:50%}
+.breath-blow{background:#ef2929}
+.breath-draw{width:7px;height:7px;margin:0 3.5px;background:#1687ff}

@@ -66,3 +66,13 @@ DJANGO_ALLOWED_HOSTS=192.168.0.10 python manage.py runserver 0.0.0.0:8000
 현재 소스와 배포 설정은 준비되어 있으며, VPS로의 파일 전송과 서비스 활성화는 아직 완료되지 않았습니다. 서버에 별도 검증용 Python 가상환경을 준비했습니다.
 
 운영 인증정보는 저장소 밖의 서버 환경변수로 관리합니다. `SCORE_OWNER_EMAIL`에는 관리 계정 이메일, `DJANGO_ALLOWED_HOSTS`에는 허용 호스트, `GOOGLE_REDIRECT_URI`에는 등록된 OAuth 콜백 URL, `DJANGO_CSRF_TRUSTED_ORIGINS`에는 허용할 HTTPS 출처를 지정합니다. 문서의 서버 주소는 예시입니다.
+
+## PDF 다운로드
+
+PDF 파일은 프로젝트의 `museScoreFile/PDF/` 폴더에 저장합니다. 원본 파일명이
+`someoneLikeYou.musicxml`이면 `museScoreFile/PDF/someoneLikeYou.pdf`로 저장합니다.
+대소문자와 공백을 포함하여 이름이 일치해야 합니다. 서버에도 같은 상대 경로로
+복사하면 홈 목록 오른쪽에 PDF 다운로드 버튼이 자동으로 표시됩니다.
+PDF만 추가할 때는 서비스 재시작이 필요하지 않습니다. 파일을 삭제하면 버튼도 사라집니다.
+서버 보관 위치는 `~/hamonica-player/museScoreFile/PDF/`입니다.
+`SCORE_PDF_DIR` 환경변수로 보관 경로를 변경할 수 있습니다.

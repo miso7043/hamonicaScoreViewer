@@ -5,7 +5,14 @@ const viewerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
   const notation = viewer.querySelector("[data-notation]"), status = viewer.querySelector("[data-status]");
   const currentLabel = viewer.querySelector("[data-page-current]"), totalLabel = viewer.querySelector("[data-page-total]");
   const previousButton = viewer.querySelector('[data-action="previous"]'), nextButton = viewer.querySelector('[data-action="next"]');
-  const mobile = viewer.dataset.layout === "mobile";
+  // Shared/desktop URLs opened on a phone must use the same two-bar layout as /m.
+  const mobile = viewer.dataset.layout === "mobile" || Boolean(window.matchMedia?.(
+    '(max-width: 760px), (pointer: coarse) and (max-width: 1100px)'
+  ).matches);
+  if (mobile) {
+    viewer.dataset.layout = "mobile";
+    document.body?.classList.add("mobile-layout");
+  }
   const measuresPerSystem = 2;
   let highlightedIds = [];
   let toolkit, xml = "", currentPage = 1, pageCount = 1;
@@ -26,6 +33,24 @@ const viewerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
   }
   function animateNotes() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Snapshot the visible score rectangle once. Scrolling later never schedules
+    // entrance effects for notes that started outside this rectangle.
+    const viewport = window.visualViewport;
+    const viewportTop = viewport?.offsetTop || 0;
+    const viewportLeft = viewport?.offsetLeft || 0;
+    const viewportBottom = viewportTop + (viewport?.height || window.innerHeight);
+    const panel = notation.getBoundingClientRect();
+    const dock = viewer.querySelector(".playback-toolbar");
+    const dockBounds = dock?.getBoundingClientRect();
+    const visible = {
+      top: Math.max(panel.top + notation.clientTop, viewportTop),
+      left: Math.max(panel.left + notation.clientLeft, viewportLeft),
+      bottom: Math.min(panel.top + notation.clientTop + notation.clientHeight, viewportBottom,
+        dockBounds && dockBounds.bottom > viewportTop && dockBounds.top < viewportBottom ? dockBounds.top : Infinity),
+      right: Math.min(panel.left + notation.clientLeft + notation.clientWidth,
+        viewportLeft + (viewport?.width || window.innerWidth)),
+    };
+    if (visible.bottom <= visible.top || visible.right <= visible.left) return;
     const groups = new Set();
     notation.querySelectorAll(".note").forEach(note => {
       let group = note;
@@ -39,9 +64,11 @@ const viewerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
     const rows = new Map();
     // Measure everything before adding animations so moving notes cannot affect ordering.
     groups.forEach(group => {
+      const bounds = group.getBoundingClientRect();
+      if (bounds.bottom <= visible.top || bounds.top >= visible.bottom ||
+          bounds.right <= visible.left || bounds.left >= visible.right) return;
       const matrix = group.parentElement.getScreenCTM();
       if (!matrix || !matrix.d) return;
-      const bounds = group.getBoundingClientRect();
       const system = group.closest(".system") || group.ownerSVGElement;
       if (!rows.has(system)) rows.set(system, {top: system.getBoundingClientRect().top, notes: []});
       rows.get(system).notes.push({
@@ -131,7 +158,7 @@ const viewerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
     if (!print) {
       print = container.ownerDocument.createElementNS(container.namespaceURI, "print");
       const attributes = directChildren(container, "attributes")[0];
-      container.insertBefore(print, attributes ? attributes.nextSibling : container.firstChild);
+      container.insertBefore(print, attributes || container.firstChild);
     }
     print.setAttribute("new-system", "yes");
   }
@@ -161,7 +188,7 @@ const viewerTranslate = (ko, en) => document.documentElement.lang === "ko" ? ko 
     }
     return new XMLSerializer().serializeToString(documentXml);
   }
-  function loadScore(content, animateEntrance = true) { xml=content; setStatus(t("악보를 만드는 중입니다…", "Rendering score\u2026")); toolkit.setOptions({scale,pageWidth:mobile ? 1000 : 2100,pageHeight:2970,adjustPageHeight:true,breaks:"encoded"}); const playbackXml=measuresPerRow(xml); highlightedIds=[]; if(!toolkit.loadData(playbackXml)) throw new Error(t("Verovio가 MusicXML을 읽지 못했습니다.", "Verovio could not read the MusicXML.")); currentPage=1; pageCount=Math.max(1,toolkit.getPageCount()); renderPage(animateEntrance); viewer.dispatchEvent(new CustomEvent("scorexmlchange",{detail:{xml:playbackXml}})); }
+  function loadScore(content, animateEntrance = true) { xml=content; setStatus(t("악보를 만드는 중입니다…", "Rendering score\u2026")); toolkit.setOptions({scale,pageWidth:mobile ? 1000 : 2100,pageHeight:2970,adjustPageHeight:true,minLastJustification:0,header:"none",breaks:"encoded"}); const playbackXml=measuresPerRow(xml); highlightedIds=[]; if(!toolkit.loadData(playbackXml)) throw new Error(t("Verovio가 MusicXML을 읽지 못했습니다.", "Verovio could not read the MusicXML.")); currentPage=1; pageCount=Math.max(1,toolkit.getPageCount()); renderPage(animateEntrance); viewer.dispatchEvent(new CustomEvent("scorexmlchange",{detail:{xml:playbackXml}})); }
   async function initialLoad() { toolkit=new verovio.toolkit(); try { if(viewer.dataset.xmlUrl) { const response=await fetch(viewer.dataset.xmlUrl); if(!response.ok) throw new Error(`${t("서버 응답 ", "Server response ")}${response.status}`); loadScore(await response.text()); } else loadScore(document.getElementById(viewer.dataset.editorId).value); } catch(error) { setStatus(`${t("악보를 불러오지 못했습니다: ", "Could not load score: ")}${error.message}`,true); } }
   viewer.addEventListener("click", event => {
     const action = event.target.closest("button")?.dataset.action;

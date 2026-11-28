@@ -45,3 +45,6 @@ GOOGLE_AUTH_ENABLED = False
 ALLOWED_GOOGLE_ID = ""
 
 SCORE_OWNER_EMAIL = os.environ.get("SCORE_OWNER_EMAIL", "").strip().lower()
+
+# Matching PDFs are deployed with the application, separately from static assets.
+SCORE_PDF_DIR = Path(os.environ.get("SCORE_PDF_DIR", BASE_DIR / "museScoreFile" / "PDF"))

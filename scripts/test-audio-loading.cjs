@@ -21,7 +21,7 @@ function setup({failM4a=false, failAll=false, failResume=false, nodeCost=0}={}) 
     fetch:async name=>{fetched.push(name);return {ok:true,arrayBuffer:async()=>Object.assign(new ArrayBuffer(1),{name, slice(){return this;}})};},
     CustomEvent:class {constructor(type,options){this.type=type;this.detail=options?.detail;}},setInterval(callback){intervals.push(callback);return callback;},clearInterval(callback){const i=intervals.indexOf(callback);if(i>=0)intervals.splice(i,1);},requestAnimationFrame(){},cancelAnimationFrame(){}};
   vm.runInNewContext(source.replace(/\}\)\(\);\s*$/, `
-    globalThis.test={play,stop,preloadSamples,loadBuffer,samples,setNotes(notes){events=notes;audioEvents=notes;duration=4;},getOffset:()=>offset,getPlaybackOffset:()=>playbackOffset(),animatePlayhead,setDuration:value=>{duration=value;}};
+    globalThis.test={play,stop,preloadSamples,loadBuffer,samples,setNotes(notes){events=notes;visualNotes=[...notes].sort((a,b)=>a.start-b.start);audioEvents=notes;duration=4;},getOffset:()=>offset,getPlaybackOffset:()=>playbackOffset(),animatePlayhead,setDuration:value=>{duration=value;}};
   })();`),scope);
   scope.test.setNotes([{start:0,duration:1,midi:60,id:'first'},{start:1,duration:1,midi:62,id:'next'}]);
   return {api:scope.test,button,status,fetched,decodes,starts,sampleOffsets,notices,advance(seconds){audioContext.currentTime+=seconds;intervals.slice().forEach(tick=>tick());}};

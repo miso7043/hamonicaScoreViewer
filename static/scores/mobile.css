@@ -1,4 +1,7 @@
 .mobile-layout .site-header{height:56px;padding:0 16px}
+/* Only pages with the harmonica dock hide the mobile site banner. */
+.mobile-layout:has(.harmonica) .site-header{display:none}
+@media (max-width:760px),(pointer:coarse) and (max-width:1100px){body:has(.harmonica) .site-header{display:none}}
 .mobile-layout .page-shell{max-width:760px;padding:20px 12px 48px}
 .mobile-layout .hero{grid-template-columns:1fr;gap:18px;padding:8px 0 26px}
 .mobile-layout .hero h1{font-size:30px}
@@ -10,15 +13,28 @@
 .mobile-layout .detail-heading h1{font-size:28px;line-height:1.3}
 .mobile-layout .viewer-toolbar{position:static;flex-wrap:wrap;justify-content:center;gap:10px;padding:10px 6px}
 .mobile-layout button,.mobile-layout .button{min-height:44px}
-.mobile-layout .playback-toolbar{position:fixed;inset:auto 0 0;z-index:30;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;width:100%;padding:8px 12px calc(8px + env(safe-area-inset-bottom, 0px));background:#0f2723;border-top:1px solid #ffffff33}
-.mobile-layout .playback-controls{display:flex;justify-content:center;gap:8px;width:100%}
-.mobile-layout .playback-controls button{min-height:36px;min-width:90px;padding:5px 12px;font-size:13px}
-.mobile-layout [data-player-status]{width:100%;font-size:12px;text-align:center;color:#c9d7d3}
+.mobile-layout .playback-toolbar{position:fixed;inset:auto 0 0;z-index:30;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:3px 8px;width:100%;padding:4px 0 calc(4px + env(safe-area-inset-bottom, 0px));background:#0f2723;border-top:1px solid #ffffff33}
+.mobile-layout .playback-controls{grid-column:1 / -1;grid-row:2;display:flex;justify-content:center;gap:12px;width:auto;margin:0 8px}
+.mobile-layout .playback-toolbar .playback-controls button{min-height:36px;min-width:36px;width:40px;height:36px;padding:0;font-size:0;line-height:1;color:#f4e6c5;background:#d5b56b18;border:1px solid #d5b56b40}
+.mobile-layout .playback-controls button::before{content:attr(data-playback-icon);font-family:system-ui,sans-serif;font-size:20px;line-height:1}
+/* Keep announcements accessible without a visible status row below the controls. */
+.mobile-layout [data-player-status]{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 .mobile-layout .notation{padding:4px;min-height:240px}
 .mobile-layout .empty{padding:32px 16px}
 
-.mobile-layout .harmonica{position:static;flex:0 0 100%;width:100%;margin:0;padding:0;background:transparent;border-radius:0;border:0}
-.mobile-layout .harmonica-diagram{max-width:min(560px, max(180px, calc((100dvh - 180px) * 3.5636)));margin:0 auto}
+.mobile-layout .harmonica{grid-column:1 / -1;grid-row:1;min-width:0;position:static;flex:0 0 100%;width:100%;margin:0;padding:0;background:transparent;border-radius:0;border:0}
+.mobile-layout .harmonica-diagram{width:100%;max-width:none;margin:0}
 .mobile-layout:has(.harmonica) .page-shell{padding-bottom:calc(var(--harmonica-dock-height, 140px) + 24px)}
 .mobile-layout:has(.harmonica) .notation{max-height:max(100px, calc(75dvh - var(--harmonica-dock-height, 140px)));min-height:min(240px, max(100px, calc(100dvh - var(--harmonica-dock-height, 140px) - 160px)))}
 html:has(.mobile-layout .harmonica){scroll-padding-bottom:calc(var(--harmonica-dock-height, 140px) + 16px)}
+
+/* Management actions stay below the full-width instrument. */
+.mobile-layout .score-dock-actions{grid-column:2;grid-row:2;margin:0 8px 0 0}
+.mobile-layout .playback-toolbar:has(.score-dock-actions) .playback-controls{grid-column:1}
+
+/* Fill the space above the measured dock instead of leaving a 25vh gap. */
+.mobile-layout .page-shell:has(>.viewer>.score-toolbar){display:flex;flex-direction:column;height:calc(100dvh - var(--harmonica-dock-height,140px));padding-top:0;padding-bottom:0}
+.mobile-layout .viewer:has(>.score-toolbar){display:flex;flex-direction:column;flex:1;min-height:0}
+.mobile-layout .viewer:has(>.score-toolbar)>.viewer-toolbar,
+.mobile-layout .viewer:has(>.score-toolbar)>.viewer-status{flex:none}
+.mobile-layout .viewer:has(>.score-toolbar)>.notation{flex:1;min-height:0;max-height:none;overflow:auto;padding-bottom:0;overscroll-behavior:contain}

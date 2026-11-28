@@ -2,7 +2,7 @@ from .i18n import tr
 from django.conf import settings
 from django.contrib import messages
 from django.db.models import F
-from django.http import HttpResponse, HttpResponseForbidden
+from django.http import FileResponse, Http404, HttpResponse, HttpResponseForbidden
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_http_methods
 
@@ -68,3 +68,16 @@ def score_delete(request, pk):
         messages.success(request, tr("'%(title)s' 악보를 삭제했습니다.") % {"title": title})
         return redirect("scores:list")
     return render(request, "scores/score_confirm_delete.html", {"score": score})
+
+
+@require_http_methods(["GET"])
+def score_pdf(request, pk):
+    score = get_object_or_404(Score, pk=pk)
+    path = score.pdf_path
+    if path is None:
+        raise Http404("PDF not found")
+    try:
+        stream = path.open("rb")
+    except FileNotFoundError:
+        raise Http404("PDF not found")
+    return FileResponse(stream, as_attachment=True, filename=path.name, content_type="application/pdf")

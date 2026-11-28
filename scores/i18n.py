@@ -2,7 +2,9 @@
 from html import unescape
 from django.utils.translation import get_language
 
-TRANSLATIONS = {"누적 방문 수": "Total visits", "조회 수": "Views", "로그아웃": "Log out",
+TRANSLATIONS = {"재생": "Play", "처음으로": "Reset", "PDF 다운로드": "Download PDF", "불기": "Blow", "빨기": "Draw",
+ "원하시는 악보 및 웹사이트 제작 의뢰를 받습니다.": "Custom sheet music and website commissions are welcome.",
+ "누적 방문 수": "Total visits", "조회 수": "Views", "로그아웃": "Log out",
  "악보 관리": "Manage scores",
  "'%(title)s' 악보를 등록했습니다.": "Score '%(title)s' added.",
  "'%(title)s' 악보를 삭제했습니다.": "Score '%(title)s' deleted.",

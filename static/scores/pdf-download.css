@@ -1,0 +1,10 @@
+.score-pdf-download{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px;color:inherit;text-decoration:none;border-radius:8px;font-size:13px;font-weight:700;white-space:nowrap}
+.score-pdf-download:hover{background:#d5b56b26}
+.score-pdf-download:focus-visible{outline:3px solid #d5b56b;outline-offset:2px}
+.score-grid .score-card{grid-template-columns:minmax(0,1fr) auto}
+.score-card>.card-actions{grid-column:2;display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:6px}
+.score-title-row{display:flex;align-items:center;gap:12px;min-width:0}
+.score-title-row h3{min-width:0;overflow-wrap:anywhere}
+.score-instrument-icon{display:block;flex:none;width:72px;height:auto}
+.mobile-layout .score-instrument-icon,.mobile-layout .score-updated-at{display:none}
+@media(max-width:760px),(pointer:coarse) and (max-width:1100px){.score-instrument-icon,.score-updated-at{display:none}}
